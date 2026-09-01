@@ -1,4 +1,4 @@
-# Lacoste Design
+# Lacoste Designs
 
 ## Design read
 A quiet, expensive studio site for Brandon Lacoste: shop owners who need a real website, not a fashion brand.
@@ -28,7 +28,7 @@ One 15s film. Four HTML chapters over it.
 1. Fracture. Subject: cluttered outdated website as a cracked glass slab. Focal: the first crack. Headline: Winning clients or losing them. Body: Your site is either doing the work or it is in the way.
 2. Recast. Subject: the same slab reforming, sleek and dark. Focal: teal edge light on the new UI. Headline: Rebuild what you have. Body: We take the real shop, the real hours, the real booking door, and make it hold on a phone.
 3. Devices. Subject: the same object reading as desktop, then tablet, then phone as the camera closes. Focal: the phone-scale slab, centered. Headline: Or build what you do not. Body: No site yet. We still start from the door, the menu, and the way you already take bookings.
-4. Hold. Subject: finished slab at rest on black. Focal: still center hold. Headline: Clean. Fast. Yours. Body: Lacoste Design. Email Brandon when you want it on your domain.
+4. Hold. Subject: finished slab at rest on black. Focal: still center hold. Headline: Clean. Fast. Yours. Body: Lacoste Designs. Email Brandon when you want it on your domain.
 
 ### World grammar
 Cinematic studio, matte black void #111214, electric teal rim #2BB3A8, off-white UI glow #EDEAE6, soft analog film grain, centered glass website slab, large dark negative space. Photoreal. Locked exposure. No flicker. No on-screen text, logos, letters, crocodile, polo, or fashion cues.

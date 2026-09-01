@@ -24,7 +24,7 @@ function Index() {
       <header className="ld-nav">
         <a className="ld-wordmark" href="/">
           <img alt="" src="/assets/logo.png" width={36} height={36} />
-          <span>Lacoste Design</span>
+          <span>Lacoste Designs</span>
         </a>
         <nav>
           <a href="#offer">Offer</a>
@@ -79,7 +79,7 @@ function Index() {
       </section>
 
       <footer className="ld-foot">
-        <span>Lacoste Design</span>
+        <span>Lacoste Designs</span>
         <a href="mailto:brandonlacoste9@gmail.com">brandonlacoste9@gmail.com</a>
       </footer>
     </main>

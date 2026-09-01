@@ -16,7 +16,7 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     body: "Your site is either doing the work or it is in the way.",
     clip: "/assets/world/scene-01.mp4",
     id: "fracture",
-    kicker: "Lacoste Design",
+    kicker: "Lacoste Designs",
     label: "Film",
     linger: 0.16,
     mobileClip: "/assets/world/scene-01-mobile.mp4",

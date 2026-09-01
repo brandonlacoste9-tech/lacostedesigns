@@ -164,7 +164,7 @@ function Overview({
     <Page>
       <PageHeader
         eyebrow="Studio"
-        title="Lacoste Design"
+        title="Lacoste Designs"
         description="Track progress and move the most important work forward."
         actions={<NewItemModal onCreate={onCreate} />}
       />
@@ -327,7 +327,7 @@ export function CustomTemplate({ previewMode = false }: { previewMode?: boolean 
       inert={previewMode ? true : undefined}
     >
       <CustomAppShell
-        brand="Lacoste Design"
+        brand="Lacoste Designs"
         navigation={NAVIGATION}
         activeId={activeId}
         onNavigate={setActiveId}

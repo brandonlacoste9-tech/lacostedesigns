@@ -2,7 +2,7 @@ import { parseLandingContent } from "@higgsfield/app-landing";
 
 export const landingContent = parseLandingContent({
   hero: {
-    eyebrow: "Lacoste Design",
+    eyebrow: "Lacoste Designs",
     title: "Winning clients or losing them",
     description:
       "We redesign your website. Or we build the one you do not have yet.",

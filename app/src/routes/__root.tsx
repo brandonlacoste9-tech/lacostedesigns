@@ -19,7 +19,7 @@ import appMetaJson from "../app-meta.json";
 declare const __HF_DESIGN_INSPECTOR__: boolean;
 
 // Built-in defaults for any field that isn't set in app-meta.json.
-const DEFAULT_TITLE = "Lacoste Design";
+const DEFAULT_TITLE = "Lacoste Designs";
 const DEFAULT_DESCRIPTION =
   "We redesign your website. Or we build the one you do not have yet.";
 
