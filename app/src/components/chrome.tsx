@@ -41,7 +41,9 @@ export function SiteNav({ current }: { current?: "home" | "pricing" }) {
 export function SiteFoot() {
   return (
     <footer className="ld-foot">
-      <span>Lacoste Designs. Website design.</span>
+      <span>
+        Lacoste Designs. Independent website studio.
+      </span>
       <span className="ld-foot__links">
         <a href="/pricing">Pricing</a>
         <a href={MAIL}>{LABEL}</a>
