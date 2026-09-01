@@ -108,13 +108,13 @@ function Index() {
       <section className="ld-close" id="close">
         <p className="ld-close__kicker">Website design, Montreal</p>
         <h2>A new site. Or a better one.</h2>
-        <p>brandonlacoste9@gmail.com</p>
+        <p>Tell us about the shop or the kitchen.</p>
         <CloseMail />
       </section>
 
       <footer className="ld-foot">
         <span>Lacoste Designs. Website design.</span>
-        <a href="mailto:brandonlacoste9@gmail.com">brandonlacoste9@gmail.com</a>
+        <a href="mailto:brandonlacoste9@gmail.com">Start a project</a>
       </footer>
     </main>
   );
