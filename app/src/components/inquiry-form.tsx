@@ -1,7 +1,6 @@
 import { useState, type FormEvent } from "react";
 
 import { useLang } from "@/i18n";
-import { sendInquiry } from "@/lib/inquiry.functions";
 
 export function InquiryForm() {
   const { t } = useLang();
@@ -13,26 +12,30 @@ export function InquiryForm() {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
+    if (String(data.get("company_url") ?? "").trim()) {
+      setStatus("ok");
+      return;
+    }
+    const body = new URLSearchParams({
+      "form-name": "contact",
+      shop: String(data.get("shop") ?? ""),
+      city: String(data.get("city") ?? ""),
+      hasSite: data.get("hasSite") === "no" ? "no" : "yes",
+      booking: String(data.get("booking") ?? ""),
+      plan: String(data.get("plan") ?? "unsure"),
+      reach: String(data.get("reach") ?? ""),
+      message: String(data.get("message") ?? ""),
+    });
     setStatus("sending");
     try {
-      await sendInquiry({
-        data: {
-          shop: String(data.get("shop") ?? ""),
-          city: String(data.get("city") ?? ""),
-          hasSite: (data.get("hasSite") === "no" ? "no" : "yes") as
-            | "yes"
-            | "no",
-          booking: String(data.get("booking") ?? ""),
-          plan: (["basic", "advanced", "unsure"].includes(
-            String(data.get("plan")),
-          )
-            ? String(data.get("plan"))
-            : "unsure") as "basic" | "advanced" | "unsure",
-          reach: String(data.get("reach") ?? ""),
-          message: String(data.get("message") ?? ""),
-          trap: String(data.get("company_url") ?? ""),
-        },
+      const sent = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
       });
+      if (!sent.ok) {
+        throw new Error("mail_failed");
+      }
       form.reset();
       setStatus("ok");
     } catch {
@@ -45,7 +48,15 @@ export function InquiryForm() {
   }
 
   return (
-    <form className="ld-form" onSubmit={onSubmit}>
+    <form
+      className="ld-form"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="company_url"
+      onSubmit={onSubmit}
+    >
+      <input type="hidden" name="form-name" value="contact" />
       <label>
         {t.fieldShop}
         <input name="shop" required minLength={2} maxLength={120} />
