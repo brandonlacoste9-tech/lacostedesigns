@@ -37,6 +37,7 @@ import {
   WorkspaceContent,
 } from "@/components/custom-ui";
 import type { NavigationItem } from "@/components/custom-ui";
+import { STUDIO_NAME } from "@/lib/brand";
 
 const NAVIGATION = [
   { id: "overview", label: "Overview", icon: NavigationOverview, gradient: "blue" },
@@ -164,7 +165,7 @@ function Overview({
     <Page>
       <PageHeader
         eyebrow="Studio"
-        title="Lacoste Designs"
+        title={STUDIO_NAME}
         description="Track progress and move the most important work forward."
         actions={<NewItemModal onCreate={onCreate} />}
       />
@@ -327,7 +328,7 @@ export function CustomTemplate({ previewMode = false }: { previewMode?: boolean 
       inert={previewMode ? true : undefined}
     >
       <CustomAppShell
-        brand="Lacoste Designs"
+        brand={STUDIO_NAME}
         navigation={NAVIGATION}
         activeId={activeId}
         onNavigate={setActiveId}

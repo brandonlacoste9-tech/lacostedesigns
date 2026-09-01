@@ -1,4 +1,5 @@
 import { LABEL, MAIL, NavMail } from "@/components/cta";
+import { STUDIO_NAME } from "@/lib/brand";
 
 const LINKS = [
   { href: "/#for", label: "For" },
@@ -14,7 +15,7 @@ export function SiteNav({ current }: { current?: "home" | "pricing" }) {
       <a className="ld-wordmark" href="/">
         <img alt="" src="/assets/logo.png" width={36} height={36} />
         <span>
-          Lacoste Designs
+          {STUDIO_NAME}
           <em>Website design</em>
         </span>
       </a>
@@ -42,7 +43,7 @@ export function SiteFoot() {
   return (
     <footer className="ld-foot">
       <span>
-        Lacoste Designs. Independent website studio.
+        {STUDIO_NAME}. Independent website studio.
       </span>
       <span className="ld-foot__links">
         <a href="/pricing">Pricing</a>

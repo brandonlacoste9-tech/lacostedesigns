@@ -14,12 +14,13 @@ import { reportHiggsfieldError } from "../lib/higgsfield-error-reporting";
 // Page metadata (browser <title>/favicon + social og: tags) committed into the
 // repo by the marketplace meta API and read at BUILD time — no runtime fetch.
 // Editing it via the app settings UI rewrites this file and redeploys the app.
+import { STUDIO_NAME } from "../lib/brand";
 import appMetaJson from "../app-meta.json";
 
 declare const __HF_DESIGN_INSPECTOR__: boolean;
 
 // Built-in defaults for any field that isn't set in app-meta.json.
-const DEFAULT_TITLE = "Lacoste Designs";
+const DEFAULT_TITLE = STUDIO_NAME;
 const DEFAULT_DESCRIPTION =
   "Website design. We rebuild yours, or we build the one you do not have yet.";
 
@@ -79,7 +80,7 @@ function buildHead(meta: AppMeta) {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title },
       { name: "description", content: description },
-      { name: "author", content: "Lacoste Designs" },
+      { name: "author", content: STUDIO_NAME },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },

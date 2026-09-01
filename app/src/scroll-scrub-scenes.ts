@@ -2,6 +2,7 @@ import type {
   ScrollScrubScene,
   ScrollScrubTheme,
 } from "@/components/scroll-scrub/scroll-scrub";
+import { STUDIO_NAME } from "@/lib/brand";
 
 export const scrollScrubTheme: ScrollScrubTheme = {
   accent: "#2BB3A8",
@@ -13,7 +14,7 @@ export const scrollScrubTheme: ScrollScrubTheme = {
 export const scrollScrubScenes: ScrollScrubScene[] = [
   {
     align: "left",
-    body: "Lacoste Designs rebuilds your website, or builds the one you do not have yet.",
+    body: `${STUDIO_NAME} rebuilds your website, or builds the one you do not have yet.`,
     clip: "/assets/world/scene-01.mp4",
     id: "fracture",
     kicker: "Website design",

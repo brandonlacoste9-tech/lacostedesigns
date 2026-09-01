@@ -1,11 +1,13 @@
 import { parseLandingContent } from "@higgsfield/app-landing";
 
+import { STUDIO_NAME } from "@/lib/brand";
+
 export const landingContent = parseLandingContent({
   hero: {
     eyebrow: "Website design",
     title: "Winning clients or losing them",
     description:
-      "Lacoste Designs rebuilds websites for shops and restaurants, or builds the one you do not have yet.",
+      `${STUDIO_NAME} rebuilds websites for shops and restaurants, or builds the one you do not have yet.`,
     primaryCta: { label: "Start a project", href: "mailto:brandonlacoste9@gmail.com" },
     secondaryCta: { label: "See the film", href: "/#fracture" },
   },

@@ -2,18 +2,19 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { SiteFoot, SiteNav } from "@/components/chrome";
 import { CloseMail } from "@/components/cta";
+import { STUDIO_NAME } from "@/lib/brand";
 
 export const Route = createFileRoute("/pricing")({
   component: Pricing,
   head: () => ({
     meta: [
-      { title: "Pricing · Lacoste Designs" },
+      { title: `Pricing · ${STUDIO_NAME}` },
       {
         name: "description",
         content:
           "Website design for shops and kitchens. Basic from $2,900 CAD. Advanced from $7,900. Monthly care from $175. Pay in halves or in three parts.",
       },
-      { property: "og:title", content: "Pricing · Lacoste Designs" },
+      { property: "og:title", content: `Pricing · ${STUDIO_NAME}` },
       {
         property: "og:description",
         content:
