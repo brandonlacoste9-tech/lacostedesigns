@@ -1,5 +1,5 @@
-const MAIL = "mailto:brandonlacoste9@gmail.com";
-const LABEL = "Start a project";
+export const MAIL = "mailto:brandonlacoste9@gmail.com";
+export const LABEL = "Start a project";
 
 export function NavMail() {
   return (

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { CloseMail, HeroMail, NavMail } from "@/components/cta";
+import { SiteFoot, SiteNav } from "@/components/chrome";
+import { CloseMail, HeroMail } from "@/components/cta";
 import { ScrollScrub } from "@/components/scroll-scrub/scroll-scrub";
 import {
   scrollScrubScenes as baseScenes,
@@ -22,23 +23,7 @@ const scenes = [
 function Index() {
   return (
     <main className="ld-page">
-      <header className="ld-nav">
-        <a className="ld-wordmark" href="/">
-          <img alt="" src="/assets/logo.png" width={36} height={36} />
-          <span>
-            Lacoste Designs
-            <em>Website design</em>
-          </span>
-        </a>
-        <nav>
-          <a href="#for">For</a>
-          <a href="#work">Work</a>
-          <a href="#offer">Offer</a>
-          <a href="#method">Method</a>
-          <a href="#close">Close</a>
-          <NavMail />
-        </nav>
-      </header>
+      <SiteNav current="home" />
 
       <ScrollScrub scenes={scenes} theme={scrollScrubTheme} />
 
@@ -112,10 +97,7 @@ function Index() {
         <CloseMail />
       </section>
 
-      <footer className="ld-foot">
-        <span>Lacoste Designs. Website design.</span>
-        <a href="mailto:brandonlacoste9@gmail.com">Start a project</a>
-      </footer>
+      <SiteFoot />
     </main>
   );
 }

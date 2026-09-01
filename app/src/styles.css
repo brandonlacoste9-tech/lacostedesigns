@@ -263,7 +263,8 @@
   color: var(--ld-muted);
 }
 
-.ld-nav nav a:hover {
+.ld-nav nav a:hover,
+.ld-nav nav a[aria-current="page"] {
   color: var(--ld-ink);
 }
 
@@ -465,6 +466,166 @@
   font-size: 0.8rem;
 }
 
+.ld-foot__links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.ld-foot a:hover {
+  color: var(--ld-ink);
+}
+
+.ld-pricing-page {
+  padding-top: 72px;
+}
+
+.ld-price-hero,
+.ld-price-grid,
+.ld-price-month,
+.ld-finance,
+.ld-price-notes {
+  padding: 10vh 8vw;
+}
+
+.ld-price-hero {
+  padding-top: 12vh;
+}
+
+.ld-price-hero h1,
+.ld-price-month h2,
+.ld-finance h2,
+.ld-price-notes h2 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  max-width: 14ch;
+}
+
+.ld-price-hero p,
+.ld-price-month__copy p,
+.ld-finance > p,
+.ld-price-notes p {
+  max-width: 46ch;
+  margin-top: 1.15rem;
+  color: var(--ld-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.ld-price-grid {
+  display: grid;
+  gap: 1.25rem;
+  padding-top: 0;
+}
+
+@media (min-width: 900px) {
+  .ld-price-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ld-price-card {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+  padding: 1.75rem 1.5rem 1.6rem;
+  border: 1px solid color-mix(in srgb, var(--ld-ink) 14%, transparent);
+}
+
+.ld-price-card__kicker {
+  color: var(--ld-accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.ld-price-card h2 {
+  font-size: 1.7rem;
+  max-width: none;
+}
+
+.ld-price-card__amount {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.ld-price-card__amount span {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--ld-muted);
+  font-family: "Inter Tight", system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ld-price-card__blurb,
+.ld-price-card li,
+.ld-finance span,
+.ld-price-notes li {
+  color: var(--ld-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.ld-price-card ul,
+.ld-price-notes ul {
+  display: grid;
+  gap: 0.65rem;
+  padding-top: 0.35rem;
+}
+
+.ld-price-card .close-mail {
+  margin-top: 0.6rem;
+  justify-self: start;
+}
+
+.ld-price-month {
+  display: grid;
+  gap: 2rem;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+@media (min-width: 900px) {
+  .ld-price-month {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.ld-finance {
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+.ld-finance ol {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.75rem;
+}
+
+.ld-finance li {
+  display: grid;
+  gap: 0.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+.ld-finance strong {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 1.4rem;
+}
+
+.ld-price-notes {
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+.ld-price-notes ul {
+  margin-top: 1.5rem;
+  max-width: 52ch;
+}
+
 .ld-error {
   display: grid;
   min-height: 100dvh;
@@ -484,7 +645,13 @@
   .ld-work,
   .ld-offer,
   .ld-method,
-  .ld-close {
+  .ld-close,
+  .ld-price-hero,
+  .ld-price-grid,
+  .ld-price-month,
+  .ld-finance,
+  .ld-price-notes,
+  .ld-foot {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
