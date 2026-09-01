@@ -3,6 +3,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { SiteFoot, SiteNav } from "@/components/chrome";
 import { CloseMail } from "@/components/cta";
 import { STUDIO_NAME } from "@/lib/brand";
+import { pageHead } from "@/lib/seo";
 import { useLang } from "@/i18n";
 import { workBySlug } from "@/work";
 
@@ -14,19 +15,18 @@ export const Route = createFileRoute("/work/$slug")({
     }
     return item;
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData?.name ?? "Work"} · ${STUDIO_NAME}` },
-      {
-        name: "description",
-        content: loaderData?.body ?? loaderData?.note ?? "",
-      },
-      {
-        property: "og:title",
-        content: `${loaderData?.name ?? "Work"} · ${STUDIO_NAME}`,
-      },
-    ],
-  }),
+  head: ({ loaderData }) =>
+    pageHead({
+      title: loaderData
+        ? `${loaderData.name} website, ${loaderData.city} · ${STUDIO_NAME}`
+        : `Work · ${STUDIO_NAME}`,
+      description:
+        loaderData?.body ??
+        loaderData?.note ??
+        "A website rebuild. Hours, prices, and the booking door they already use.",
+      path: loaderData ? `/work/${loaderData.slug}` : "/",
+      image: loaderData?.image,
+    }),
   component: WorkCase,
 });
 
@@ -53,7 +53,11 @@ function WorkCase() {
           {t.caseBooking}: {item.booking}
         </p>
         {item.image ? (
-          <img className="ld-case__shot" src={item.image} alt="" />
+          <img
+            className="ld-case__shot"
+            src={item.image}
+            alt={`${item.name} website, ${city}`}
+          />
         ) : null}
         <p className="ld-work__aside">{note}. {t.workAside}</p>
         <div className="ld-case__actions">

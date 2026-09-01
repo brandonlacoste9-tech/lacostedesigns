@@ -17,18 +17,18 @@ export const COPY = {
     navContact: "Contact",
     cta: "Start a project",
     tagline: "Website design",
-    heroKicker: "Website design",
+    heroKicker: "Website design, Montreal and West Island",
     heroTitle: "Winning clients or losing them",
     heroBody:
-      "We rebuild your website, or we build the one you do not have yet.",
+      "We rebuild your website, or we build the one you do not have yet. For businesses in Montreal and the West Island.",
     recastKicker: "After the film",
     recastTitle: "This is what the rebuild looks like",
     recastBody:
       "B Barbier, downtown Montréal. Real hours, real prices, Setmore still takes the bookings.",
     recastLink: "See the case",
-    forTitle: "Websites for businesses that need to look real",
+    forTitle: "Website design in Montreal and the West Island",
     forBody:
-      "Shops, clinics, restaurants, and the rest. If you already take bookings, you keep that tool. We rebuild the website.",
+      "Shops, clinics, restaurants, and the rest. If you already take bookings, you keep that tool. We rebuild the website so people in Montreal and the West Island can find you.",
     workTitle: "Selected work",
     workAside: "Previews. Not live on their own domains unless they asked.",
     workPreview: "Preview",
@@ -51,15 +51,15 @@ export const COPY = {
     step3Title: "Then it is yours",
     step3Body:
       "Put it on your domain when you are ready. Want something changed, say so.",
-    closeKicker: "Website design, Montreal",
+    closeKicker: "Website design, Montreal and West Island",
     closeTitle: "A new site. Or a better one.",
     closeBody: "Tell us about the business.",
-    footCity: "Montreal",
+    footCity: "Montreal and West Island",
     footYear: "2026",
     priceKicker: "Pricing",
     priceTitle: "Clear numbers. No games.",
     priceIntro:
-      "In 2026 most Canadian small-business sites land between $1,500 and $10,000. A builder plan is $25 to $60 a month and you do the work. A freelancer is often $1,500 to $5,000. A mid-size studio is $5,000 to $15,000. We price for one business.",
+      "In 2026 most Canadian small-business sites land between $1,500 and $10,000. A builder plan is $25 to $60 a month and you do the work. A freelancer is often $1,500 to $5,000. A mid-size studio is $5,000 to $15,000. We price for one business in Montreal or the West Island.",
     basicKicker: "Most businesses",
     basicName: "Basic",
     basicFrom: "from",
@@ -112,9 +112,21 @@ export const COPY = {
     notes3:
       "A full photo shoot. Use what you have, or we plan one on Advanced.",
     notesTax: "Prices in CAD. Taxes extra.",
-    contactKicker: "Contact",
+    contactKicker: "Montreal and West Island",
     contactTitle: "Tell us about the business",
     contactBody: "We will say which number fits before any work starts.",
+    faqTitle: "Before you write",
+    faq1Q: "Where do you work?",
+    faq1A:
+      "Montreal and the West Island. Pointe-Claire, Dollard-Des-Ormeaux, Ile-Perrot, and the rest of the island. If the business is here, we can rebuild the site.",
+    faq2Q: "Do you only do shops and restaurants?",
+    faq2A:
+      "No. Those are in the work because we rebuilt them. We do websites for any business.",
+    faq3Q: "We already take bookings. Do we have to switch?",
+    faq3A:
+      "No. Booksy, Setmore, Square, OpenTable, or whatever you print stays. We rebuild the website.",
+    faq4Q: "English or French?",
+    faq4A: "English first. French when the business already uses it.",
     fieldShop: "Business name",
     fieldCity: "City",
     fieldHasSite: "Do you already have a website?",
@@ -142,18 +154,18 @@ export const COPY = {
     navContact: "Contact",
     cta: "Démarrer un projet",
     tagline: "Conception de sites",
-    heroKicker: "Conception de sites",
+    heroKicker: "Conception de sites, Montréal et Ouest-de-l'Île",
     heroTitle: "Gagner des clients, ou les perdre",
     heroBody:
-      "Nous refaisons votre site, ou nous construisons celui que vous n'avez pas encore.",
+      "Nous refaisons votre site, ou nous construisons celui que vous n'avez pas encore. Pour les entreprises de Montréal et de l'Ouest-de-l'Île.",
     recastKicker: "Après le film",
     recastTitle: "Voici à quoi ressemble la refonte",
     recastBody:
       "B Barbier, centre-ville de Montréal. Vraies heures, vrais prix, Setmore prend encore les rendez-vous.",
     recastLink: "Voir le cas",
-    forTitle: "Des sites pour les entreprises qui doivent avoir l'air vraies",
+    forTitle: "Conception de sites à Montréal et sur l'Ouest-de-l'Île",
     forBody:
-      "Commerces, cliniques, restaurants, et le reste. Si vous prenez déjà des rendez-vous, vous gardez cet outil. Nous refaisons le site.",
+      "Commerces, cliniques, restaurants, et le reste. Si vous prenez déjà des rendez-vous, vous gardez cet outil. Nous refaisons le site pour que les gens de Montréal et de l'Ouest-de-l'Île vous trouvent.",
     workTitle: "Travail choisi",
     workAside:
       "Aperçus. Pas en ligne sur leurs propres domaines, sauf s'ils l'ont demandé.",
@@ -177,15 +189,15 @@ export const COPY = {
     step3Title: "Ensuite c'est à vous",
     step3Body:
       "Mettez-le sur votre domaine quand vous êtes prêt. Un changement? Dites-le.",
-    closeKicker: "Conception de sites, Montréal",
+    closeKicker: "Conception de sites, Montréal et Ouest-de-l'Île",
     closeTitle: "Un nouveau site. Ou un meilleur.",
     closeBody: "Parlez-nous de l'entreprise.",
-    footCity: "Montréal",
+    footCity: "Montréal et Ouest-de-l'Île",
     footYear: "2026",
     priceKicker: "Tarifs",
     priceTitle: "Des chiffres clairs. Pas de jeu.",
     priceIntro:
-      "En 2026, la plupart des sites de PME canadiennes se situent entre 1 500 $ et 10 000 $. Un outil comme Wix coûte 25 $ à 60 $ par mois, et vous faites le travail. Un pigiste demande souvent 1 500 $ à 5 000 $. Un studio moyen, 5 000 $ à 15 000 $. Nous tarifons pour une entreprise.",
+      "En 2026, la plupart des sites de PME canadiennes se situent entre 1 500 $ et 10 000 $. Un outil comme Wix coûte 25 $ à 60 $ par mois, et vous faites le travail. Un pigiste demande souvent 1 500 $ à 5 000 $. Un studio moyen, 5 000 $ à 15 000 $. Nous tarifons pour une entreprise à Montréal ou sur l'Ouest-de-l'Île.",
     basicKicker: "La plupart des commerces",
     basicName: "De base",
     basicFrom: "à partir de",
@@ -239,9 +251,22 @@ export const COPY = {
     notes3:
       "Une séance photo complète. Utilisez ce que vous avez, ou on la planifie en Avancé.",
     notesTax: "Prix en dollars canadiens. Taxes en sus.",
-    contactKicker: "Contact",
+    contactKicker: "Montréal et Ouest-de-l'Île",
     contactTitle: "Parlez-nous de l'entreprise",
     contactBody: "Nous dirons quel chiffre convient avant tout travail.",
+    faqTitle: "Avant d'écrire",
+    faq1Q: "Où travaillez-vous?",
+    faq1A:
+      "Montréal et l'Ouest-de-l'Île. Pointe-Claire, Dollard-Des-Ormeaux, Île-Perrot, et le reste de l'île. Si l'entreprise est ici, on peut refaire le site.",
+    faq2Q: "Vous ne faites que des commerces et des restaurants?",
+    faq2A:
+      "Non. Ils sont dans le travail parce qu'on les a refaits. Nous faisons des sites pour toute entreprise.",
+    faq3Q: "On prend déjà des rendez-vous. Faut-il changer?",
+    faq3A:
+      "Non. Booksy, Setmore, Square, OpenTable, ou ce que vous imprimez déjà reste. Nous refaisons le site.",
+    faq4Q: "Anglais ou français?",
+    faq4A:
+      "Anglais d'abord. Français quand l'entreprise l'utilise déjà.",
     fieldShop: "Nom de l'entreprise",
     fieldCity: "Ville",
     fieldHasSite: "Avez-vous déjà un site?",

@@ -3,20 +3,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteFoot, SiteNav } from "@/components/chrome";
 import { InquiryForm } from "@/components/inquiry-form";
 import { STUDIO_NAME } from "@/lib/brand";
+import { pageHead } from "@/lib/seo";
 import { useLang } from "@/i18n";
 
 export const Route = createFileRoute("/contact")({
   component: Contact,
-  head: () => ({
-    meta: [
-      { title: `Contact · ${STUDIO_NAME}` },
-      {
-        name: "description",
-        content: "Tell us about the business.",
-      },
-      { property: "og:title", content: `Contact · ${STUDIO_NAME}` },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: `Contact a Montreal web designer · ${STUDIO_NAME}`,
+      description:
+        "Start a website project in Montreal or the West Island. Tell us about the business. We write back with which number fits.",
+      path: "/contact",
+    }),
 });
 
 function Contact() {

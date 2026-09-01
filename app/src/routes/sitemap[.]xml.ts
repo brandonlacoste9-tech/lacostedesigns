@@ -1,23 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { SITE_ORIGIN } from "@/lib/seo";
 import { WORK } from "@/work";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
-      GET: async ({ request }) => {
-        const origin = new URL(request.url).origin;
+      GET: async () => {
         const today = new Date().toISOString().split("T")[0];
-        const pages = ["/", "/pricing", "/contact", ...WORK.map((item) => `/work/${item.slug}`)];
+        const pages: { path: string; priority: string; changefreq: string }[] = [
+          { path: "/", priority: "1.0", changefreq: "weekly" },
+          { path: "/pricing", priority: "0.9", changefreq: "monthly" },
+          { path: "/contact", priority: "0.9", changefreq: "monthly" },
+          ...WORK.map((item) => ({
+            path: `/work/${item.slug}`,
+            priority: "0.7",
+            changefreq: "monthly",
+          })),
+        ];
         const xml = [
           '<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-          ...pages.flatMap((path, i) => [
+          ...pages.flatMap((page) => [
             "  <url>",
-            `    <loc>${origin}${path}</loc>`,
+            `    <loc>${SITE_ORIGIN}${page.path === "/" ? "" : page.path}</loc>`,
             `    <lastmod>${today}</lastmod>`,
-            "    <changefreq>weekly</changefreq>",
-            `    <priority>${i === 0 ? "1.0" : "0.8"}</priority>`,
+            `    <changefreq>${page.changefreq}</changefreq>`,
+            `    <priority>${page.priority}</priority>`,
             "  </url>",
           ]),
           "</urlset>",

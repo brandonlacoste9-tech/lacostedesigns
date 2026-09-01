@@ -15,6 +15,8 @@ import { reportHiggsfieldError } from "../lib/higgsfield-error-reporting";
 // repo by the marketplace meta API and read at BUILD time — no runtime fetch.
 // Editing it via the app settings UI rewrites this file and redeploys the app.
 import { STUDIO_NAME } from "../lib/brand";
+import { BUSINESS_JSON } from "../lib/seo";
+import { StructuredData } from "../components/StructuredData";
 import { LangProvider } from "../i18n";
 import appMetaJson from "../app-meta.json";
 
@@ -23,7 +25,7 @@ declare const __HF_DESIGN_INSPECTOR__: boolean;
 // Built-in defaults for any field that isn't set in app-meta.json.
 const DEFAULT_TITLE = STUDIO_NAME;
 const DEFAULT_DESCRIPTION =
-  "Website design. We rebuild yours, or we build the one you do not have yet.";
+  "Website design for businesses in Montreal and the West Island. We rebuild yours, or we build the one you do not have yet.";
 
 type AppMeta = {
   og_title?: string | null;
@@ -82,10 +84,18 @@ function buildHead(meta: AppMeta) {
       { title },
       { name: "description", content: description },
       { name: "author", content: STUDIO_NAME },
+      { name: "theme-color", content: "#111214" },
+      { name: "geo.region", content: "CA-QC" },
+      { name: "geo.placename", content: "Montreal" },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_CA" },
+      { property: "og:locale:alternate", content: "fr_CA" },
+      { property: "og:site_name", content: STUDIO_NAME },
       { name: "twitter:card", content: ogImage ? "summary_large_image" : "summary" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
       ...(ogImage
         ? [
             { property: "og:image", content: ogImage },
@@ -166,6 +176,7 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body className="ld-body">
+        <StructuredData json={BUSINESS_JSON} />
         {children}
         <Scripts />
       </body>

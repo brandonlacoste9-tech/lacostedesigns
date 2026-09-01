@@ -3,21 +3,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteFoot, SiteNav } from "@/components/chrome";
 import { CloseMail } from "@/components/cta";
 import { STUDIO_NAME } from "@/lib/brand";
+import { pageHead } from "@/lib/seo";
 import { useLang } from "@/i18n";
 
 export const Route = createFileRoute("/pricing")({
   component: Pricing,
-  head: () => ({
-    meta: [
-      { title: `Pricing · ${STUDIO_NAME}` },
-      {
-        name: "description",
-        content:
-          "Website design for businesses. Basic from $2,900 CAD. Advanced from $7,900. Monthly care from $175.",
-      },
-      { property: "og:title", content: `Pricing · ${STUDIO_NAME}` },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: `Website pricing in Montreal · ${STUDIO_NAME}`,
+      description:
+        "Website design in Montreal and the West Island. Basic from $2,900 CAD. Advanced from $7,900. Monthly care from $175.",
+      path: "/pricing",
+    }),
 });
 
 function Pricing() {

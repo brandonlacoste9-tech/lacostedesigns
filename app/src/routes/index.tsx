@@ -2,7 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { SiteFoot, SiteNav } from "@/components/chrome";
 import { CloseMail, HeroMail } from "@/components/cta";
+import { StructuredData } from "@/components/StructuredData";
 import { STUDIO_NAME } from "@/lib/brand";
+import { HOME_FAQ_JSON, pageHead } from "@/lib/seo";
 import { ScrollScrub } from "@/components/scroll-scrub/scroll-scrub";
 import { useLang } from "@/i18n";
 import {
@@ -13,17 +15,13 @@ import { FEATURED, REST } from "@/work";
 
 export const Route = createFileRoute("/")({
   component: Index,
-  head: () => ({
-    meta: [
-      { title: STUDIO_NAME },
-      { property: "og:title", content: STUDIO_NAME },
-      {
-        name: "description",
-        content:
-          "Website design. We rebuild yours, or we build the one you do not have yet.",
-      },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: `${STUDIO_NAME} · Website design, Montreal and West Island`,
+      description:
+        "Website design for businesses in Montreal and the West Island. We rebuild yours, or we build the one you do not have yet. English first. French when you need it.",
+      path: "/",
+    }),
 });
 
 function Index() {
@@ -41,6 +39,7 @@ function Index() {
 
   return (
     <main className="ld-page">
+      <StructuredData json={HOME_FAQ_JSON} />
       <SiteNav current="home" />
 
       <ScrollScrub scenes={scenes} theme={scrollScrubTheme} />
@@ -56,10 +55,18 @@ function Index() {
             </a>
           </div>
           <a className="ld-recast__shot" href={`/work/${recast.slug}`}>
-            <img src={recast.image} alt={recast.name} />
+            <img
+              src={recast.image}
+              alt={`${recast.name} website, ${recast.city}`}
+            />
           </a>
         </section>
       ) : null}
+
+      <section className="ld-for" id="area">
+        <h2>{t.forTitle}</h2>
+        <p>{t.forBody}</p>
+      </section>
 
       <section className="ld-work" id="work">
         <h2>{t.workTitle}</h2>
@@ -70,7 +77,7 @@ function Index() {
                 {item.image ? (
                   <img
                     src={item.image}
-                    alt=""
+                    alt={`${item.name} website, ${item.city}`}
                     onError={(event) => {
                       event.currentTarget.style.display = "none";
                     }}
@@ -94,7 +101,12 @@ function Index() {
             <li key={item.slug}>
               <a href={`/work/${item.slug}`}>
                 {item.image ? (
-                  <img className="ld-work__thumb" src={item.image} alt="" />
+                  <img
+                    className="ld-work__thumb"
+                    src={item.image}
+                    alt={`${item.name} website, ${item.city}`}
+                    loading="lazy"
+                  />
                 ) : null}
                 <span>
                   <strong>{item.name}</strong>
@@ -136,6 +148,28 @@ function Index() {
           <li>
             <strong>{t.step3Title}</strong>
             <span>{t.step3Body}</span>
+          </li>
+        </ol>
+      </section>
+
+      <section className="ld-method" id="faq">
+        <h2>{t.faqTitle}</h2>
+        <ol>
+          <li>
+            <strong>{t.faq1Q}</strong>
+            <span>{t.faq1A}</span>
+          </li>
+          <li>
+            <strong>{t.faq2Q}</strong>
+            <span>{t.faq2A}</span>
+          </li>
+          <li>
+            <strong>{t.faq3Q}</strong>
+            <span>{t.faq3A}</span>
+          </li>
+          <li>
+            <strong>{t.faq4Q}</strong>
+            <span>{t.faq4A}</span>
           </li>
         </ol>
       </section>

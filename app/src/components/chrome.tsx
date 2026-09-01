@@ -79,7 +79,7 @@ export function SiteFoot() {
   return (
     <footer className="ld-foot">
       <span>
-        {STUDIO_NAME}. {t.footCity}. {t.footYear}.
+        {STUDIO_NAME}. <a href="/#area">{t.footCity}</a>. {t.footYear}.
       </span>
       <span className="ld-foot__links">
         <a href="/pricing">{t.navPricing}</a>

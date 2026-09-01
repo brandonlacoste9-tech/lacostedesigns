@@ -9,6 +9,12 @@ export const Route = createFileRoute("/app")({
   validateSearch: (search: Record<string, unknown>): AppSearch => ({
     preview: search.preview === "1" || search.preview === true,
   }),
+  head: () => ({
+    meta: [
+      { title: "App" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
   component: AppRoute,
 });
 
