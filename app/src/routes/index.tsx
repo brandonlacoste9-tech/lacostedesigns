@@ -6,6 +6,7 @@ import {
   scrollScrubScenes as baseScenes,
   scrollScrubTheme,
 } from "@/scroll-scrub-scenes";
+import { WORK } from "@/work";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -30,6 +31,8 @@ function Index() {
           </span>
         </a>
         <nav>
+          <a href="#for">For</a>
+          <a href="#work">Work</a>
           <a href="#offer">Offer</a>
           <a href="#method">Method</a>
           <a href="#close">Close</a>
@@ -38,6 +41,33 @@ function Index() {
       </header>
 
       <ScrollScrub scenes={scenes} theme={scrollScrubTheme} />
+
+      <section className="ld-for" id="for">
+        <h2>Websites for shops that already book</h2>
+        <p>
+          Barbers, salons, tattoo shops. Booksy, Setmore, Square, Squire. We
+          rebuild the website. You keep the calendar.
+        </p>
+      </section>
+
+      <section className="ld-work" id="work">
+        <h2>Recent rebuilds</h2>
+        <ul>
+          {WORK.map((item) => (
+            <li key={item.href}>
+              <a href={item.href} rel="noreferrer" target="_blank">
+                <strong>{item.name}</strong>
+                <span className="ld-work__city">{item.city}</span>
+                <span className="ld-work__note">{item.note}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p className="ld-work__aside">
+          Previews on our domain. Not live on the shops&apos; sites unless they
+          asked for that.
+        </p>
+      </section>
 
       <section className="ld-offer" id="offer">
         <div className="ld-offer__col">

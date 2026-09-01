@@ -317,6 +317,80 @@
   color: var(--ld-accent);
 }
 
+.ld-for {
+  padding: 16vh 8vw 10vh;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+.ld-for h2,
+.ld-work h2 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  max-width: 16ch;
+}
+
+.ld-for p {
+  max-width: 42ch;
+  margin-top: 1.1rem;
+  color: var(--ld-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.ld-work {
+  padding: 10vh 8vw 12vh;
+}
+
+.ld-work ul {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 0;
+}
+
+@media (min-width: 900px) {
+  .ld-work ul {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+  }
+}
+
+.ld-work li a {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.35rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+.ld-work li a:hover strong {
+  color: var(--ld-accent);
+}
+
+.ld-work strong {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+}
+
+.ld-work__city {
+  color: var(--ld-accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ld-work__note {
+  color: var(--ld-muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.ld-work__aside {
+  margin-top: 1.75rem;
+  max-width: 46ch;
+  color: var(--ld-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
 .ld-offer {
   display: grid;
   gap: 2.5rem;
@@ -406,6 +480,8 @@
     display: none;
   }
 
+  .ld-for,
+  .ld-work,
   .ld-offer,
   .ld-method,
   .ld-close {
