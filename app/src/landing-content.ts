@@ -8,7 +8,7 @@ export const landingContent = parseLandingContent({
     title: "Winning clients or losing them",
     description:
       `${STUDIO_NAME} rebuilds websites for shops and restaurants, or builds the one you do not have yet.`,
-    primaryCta: { label: "Start a project", href: "mailto:brandonlacoste9@gmail.com" },
+    primaryCta: { label: "Start a project", href: "/contact" },
     secondaryCta: { label: "See the film", href: "/#fracture" },
   },
   preview: {
@@ -100,6 +100,6 @@ export const landingContent = parseLandingContent({
   finalCta: {
     title: "Start a project",
     description: "Clean. Fast. Yours.",
-    action: { label: "Start a project", href: "mailto:brandonlacoste9@gmail.com" },
+    action: { label: "Start a project", href: "/contact" },
   },
 });

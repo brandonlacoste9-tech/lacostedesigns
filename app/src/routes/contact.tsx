@@ -28,6 +28,11 @@ function Contact() {
         <p className="ld-close__kicker">{t.contactKicker}</p>
         <h1>{t.contactTitle}</h1>
         <p>{t.contactBody}</p>
+        <p>
+          <a className="ld-text-link" href="mailto:lacostedesigns@protonmail.com">
+            lacostedesigns@protonmail.com
+          </a>
+        </p>
         <InquiryForm />
       </section>
       <SiteFoot />

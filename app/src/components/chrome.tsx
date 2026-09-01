@@ -84,6 +84,9 @@ export function SiteFoot() {
       <span className="ld-foot__links">
         <a href="/pricing">{t.navPricing}</a>
         <a href="/contact">{t.navContact}</a>
+        <a href="mailto:lacostedesigns@protonmail.com">
+          lacostedesigns@protonmail.com
+        </a>
         <a href={CONTACT}>{t.cta}</a>
       </span>
     </footer>

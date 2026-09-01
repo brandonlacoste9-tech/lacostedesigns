@@ -3,7 +3,7 @@ import { z } from "zod";
 
 import { bindings } from "./bindings.server";
 
-const INBOX = "brandonlacoste9@gmail.com";
+const INBOX = "lacostedesigns@protonmail.com";
 
 const Inquiry = z.object({
   shop: z.string().trim().min(2).max(120),
