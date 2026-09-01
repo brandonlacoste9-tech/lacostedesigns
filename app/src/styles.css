@@ -894,6 +894,10 @@
 }
 
 @media (max-width: 860px) {
+  .ld-wordmark em {
+    display: none;
+  }
+
   .ld-nav nav {
     gap: 0.7rem;
     font-size: 0.72rem;

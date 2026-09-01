@@ -30,7 +30,7 @@ export function SiteNav({
             key={link.href}
             href={link.href}
             className={
-              link.id === "pricing" || link.id === "contact" || link.id === "work"
+              link.id === "pricing" || link.id === "contact"
                 ? "ld-nav__keep"
                 : undefined
             }
