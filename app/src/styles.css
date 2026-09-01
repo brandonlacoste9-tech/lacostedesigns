@@ -637,7 +637,7 @@
 }
 
 @media (max-width: 860px) {
-  .ld-nav nav a:not(.nav-mail) {
+  .ld-nav nav a:not(.nav-mail):not(.ld-nav__price) {
     display: none;
   }
 

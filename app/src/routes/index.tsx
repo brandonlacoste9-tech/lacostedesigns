@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { SiteFoot, SiteNav } from "@/components/chrome";
 import { CloseMail, HeroMail } from "@/components/cta";
+import { STUDIO_NAME } from "@/lib/brand";
 import { ScrollScrub } from "@/components/scroll-scrub/scroll-scrub";
 import {
   scrollScrubScenes as baseScenes,
@@ -11,6 +12,17 @@ import { WORK } from "@/work";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: STUDIO_NAME },
+      { property: "og:title", content: STUDIO_NAME },
+      {
+        name: "description",
+        content:
+          "Website design. We rebuild yours, or we build the one you do not have yet.",
+      },
+    ],
+  }),
 });
 
 const scenes = [

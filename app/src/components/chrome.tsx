@@ -24,6 +24,7 @@ export function SiteNav({ current }: { current?: "home" | "pricing" }) {
           <a
             key={link.href}
             href={link.href}
+            className={link.href === "/pricing" ? "ld-nav__price" : undefined}
             aria-current={
               current === "pricing" && link.href === "/pricing"
                 ? "page"
