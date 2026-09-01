@@ -1,8 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
-import { bindings } from "./bindings.server";
-
 const INBOX = "lacostedesigns@protonmail.com";
 
 const Inquiry = z.object({
@@ -23,25 +21,6 @@ export const sendInquiry = createServerFn({ method: "POST" })
       return { ok: true as const };
     }
 
-    const { DB } = bindings();
-    if (DB) {
-      await DB.prepare(
-        `INSERT INTO inquiries (id, shop, city, has_site, booking, plan, reach, message, created_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))`,
-      )
-        .bind(
-          crypto.randomUUID(),
-          data.shop,
-          data.city,
-          data.hasSite,
-          data.booking,
-          data.plan,
-          data.reach,
-          data.message || "",
-        )
-        .run();
-    }
-
     const body = [
       `Shop: ${data.shop}`,
       `City: ${data.city}`,
@@ -54,23 +33,22 @@ export const sendInquiry = createServerFn({ method: "POST" })
       .filter(Boolean)
       .join("\n");
 
-    try {
-      await fetch(`https://formsubmit.co/ajax/${INBOX}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          _subject: `New project: ${data.shop}`,
-          _template: "box",
-          name: data.shop,
-          city: data.city,
-          message: body,
-        }),
-      });
-    } catch {
-      // Stored even if the mail hop fails.
+    const sent = await fetch(`https://formsubmit.co/ajax/${INBOX}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        _subject: `New project: ${data.shop}`,
+        _template: "box",
+        name: data.shop,
+        city: data.city,
+        message: body,
+      }),
+    });
+    if (!sent.ok) {
+      throw new Error("mail_failed");
     }
 
     return { ok: true as const };

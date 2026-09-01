@@ -1,0 +1,12 @@
+[build]
+  base = "app"
+  command = "bunx tsr generate && vite build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NETLIFY = "true"
+
+[dev]
+  command = "vite dev"
+  port = 3000

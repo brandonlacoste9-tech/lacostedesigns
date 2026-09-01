@@ -1,4 +1,5 @@
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import netlify from "@netlify/vite-plugin-tanstack-start";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import {
@@ -20,6 +21,7 @@ const QUANTA_ICONS_SHIM = fileURLToPath(
 
 export default defineConfig(({ command, mode }) => {
   const designInspectorEnabled = process.env.HF_DESIGN_INSPECTOR === "1" || mode === "design";
+  const onNetlify = Boolean(process.env.NETLIFY);
 
   return {
     // fsevents can miss edits under some setups (bun-launched dev, synced/virtual
@@ -47,7 +49,8 @@ export default defineConfig(({ command, mode }) => {
       // both variants bundle their edge build (react-dom's web-streams server,
       // etc.) instead of the Node variant leaning on nodejs_compat shims.
       // `vite dev` SSR runs in Node, where default node resolution is correct.
-      ...(command === "build"
+      // Netlify builds skip the Worker target and use the Netlify Vite plugin.
+      ...(command === "build" && !onNetlify
         ? {
             target: "webworker" as const,
             resolve: {
@@ -60,16 +63,16 @@ export default defineConfig(({ command, mode }) => {
             },
           }
         : {}),
-      noExternal: command === "build" ? true : undefined,
+      noExternal: command === "build" && !onNetlify ? true : undefined,
       // `cloudflare:workers` is a workerd runtime built-in that exposes the Worker
       // env / bindings (D1 `DB`, R2 `STORAGE`). Like node: builtins it must NOT be
       // bundled; the runtime provides it. (`ssr.external` is typed string[].)
-      external: ["cloudflare:workers"],
+      external: onNetlify ? [] : ["cloudflare:workers"],
     },
     build: {
       // Keep `cloudflare:*` external in the SSR rollup pass too — `noExternal`
       // above would otherwise try to resolve+bundle it and fail.
-      rollupOptions: { external: [/^cloudflare:/] },
+      rollupOptions: onNetlify ? undefined : { external: [/^cloudflare:/] },
     },
     plugins: [
       // Local SVG assets (e.g. the branded generate-button sparkle) import as
@@ -81,7 +84,12 @@ export default defineConfig(({ command, mode }) => {
           icon: true,
           svgProps: { fill: "currentColor" },
           svgoConfig: {
-            plugins: [{ name: "preset-default", params: { overrides: { removeViewBox: false } } }],
+            plugins: [
+              {
+                name: "preset-default",
+                params: { overrides: { removeViewBox: false } },
+              } as never,
+            ],
           },
         },
       }),
@@ -100,6 +108,7 @@ export default defineConfig(({ command, mode }) => {
       tanstackStart({
         server: { entry: "server" },
       }),
+      ...(onNetlify ? [netlify()] : []),
       higgsfieldDesignInspectorVitePlugin(designInspectorEnabled),
       react({
         babel: {
