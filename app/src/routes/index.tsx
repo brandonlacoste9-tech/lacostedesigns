@@ -43,10 +43,11 @@ function Index() {
       <ScrollScrub scenes={scenes} theme={scrollScrubTheme} />
 
       <section className="ld-for" id="for">
-        <h2>Websites for shops that already book</h2>
+        <h2>Websites for shops and kitchens that already book</h2>
         <p>
-          Barbers, salons, tattoo shops. Booksy, Setmore, Square, Squire. We
-          rebuild the website. You keep the calendar.
+          Barbers, salons, tattoo shops, restaurants. Booksy, Setmore, Square,
+          OpenTable, TB Dine, Resy. We rebuild the website. You keep how people
+          book.
         </p>
       </section>
 
@@ -64,8 +65,8 @@ function Index() {
           ))}
         </ul>
         <p className="ld-work__aside">
-          Previews on our domain. Not live on the shops&apos; sites unless they
-          asked for that.
+          Previews on our domain. Not live on their own sites unless they asked
+          for that.
         </p>
       </section>
 

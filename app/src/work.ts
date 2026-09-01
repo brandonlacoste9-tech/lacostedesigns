@@ -55,4 +55,40 @@ export const WORK: WorkItem[] = [
     note: "Rebuild. Their book-online page still takes the bookings.",
     href: "https://rose-and-rebel.netlify.app",
   },
+  {
+    name: "Scarolie's Pasta Emporium",
+    city: "Pointe-Claire",
+    note: "Rebuild. TB Dine still takes the tables.",
+    href: "https://scarolies.netlify.app",
+  },
+  {
+    name: "Intermezzo Restaurant and Wine Cellar",
+    city: "Vernon",
+    note: "Rebuild. TB Dine still takes the tables.",
+    href: "https://intermezzo.netlify.app",
+  },
+  {
+    name: "Restaurant Aryana",
+    city: "Île-Perrot",
+    note: "Two rooms. JustBookMe still takes the table requests.",
+    href: "https://aryana.netlify.app",
+  },
+  {
+    name: "Joe's Italian Kitchen",
+    city: "Ottawa",
+    note: "Three rooms. OpenTable still takes the tables.",
+    href: "https://joes-italian-kitchen.netlify.app",
+  },
+  {
+    name: "The Wellington Diner",
+    city: "Ottawa",
+    note: "Rebuild. Tables by phone, as they print it.",
+    href: "https://wellington-diner.netlify.app",
+  },
+  {
+    name: "Lou's Pointe-Claire",
+    city: "Pointe-Claire",
+    note: "Rebuild. Resy still takes the tables.",
+    href: "https://louspointeclaire.netlify.app",
+  },
 ];

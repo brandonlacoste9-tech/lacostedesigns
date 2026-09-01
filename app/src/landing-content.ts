@@ -5,7 +5,7 @@ export const landingContent = parseLandingContent({
     eyebrow: "Website design",
     title: "Winning clients or losing them",
     description:
-      "Lacoste Designs rebuilds your website, or builds the one you do not have yet.",
+      "Lacoste Designs rebuilds websites for shops and restaurants, or builds the one you do not have yet.",
     primaryCta: { label: "Email Brandon", href: "mailto:brandonlacoste9@gmail.com" },
     secondaryCta: { label: "See the film", href: "/#fracture" },
   },
