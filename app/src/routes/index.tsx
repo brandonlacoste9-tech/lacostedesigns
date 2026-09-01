@@ -57,19 +57,19 @@ function Index() {
       </section>
 
       <section className="ld-method" id="method">
-        <h2>How it runs</h2>
+        <h2>How a new site gets made</h2>
         <ol>
           <li>
-            <strong>Facts</strong>
-            <span>Only what is printed. No invented emails or walk-ins.</span>
+            <strong>Your shop, as it is</strong>
+            <span>Hours, prices, phone, and how you already take bookings. We use what you actually have.</span>
           </li>
           <li>
-            <strong>Design</strong>
-            <span>A fast website preview on our domain. Your booking tool stays yours.</span>
+            <strong>A preview</strong>
+            <span>You see the new website on our domain first. Your booking tool stays the same.</span>
           </li>
           <li>
-            <strong>Yours</strong>
-            <span>Want it on your domain, or want something changed, say so.</span>
+            <strong>Then it is yours</strong>
+            <span>Put it on your domain when you are ready. Want something changed, say so.</span>
           </li>
         </ol>
       </section>

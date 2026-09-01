@@ -21,12 +21,12 @@ export const landingContent = parseLandingContent({
     openLabel: "Open site",
   },
   steps: {
-    title: "How it runs",
-    description: "Facts first. Then a preview. Then it is yours.",
+    title: "How a new site gets made",
+    description: "Your shop first. Then a preview. Then it is yours.",
     items: [
       {
-        title: "Facts",
-        description: "Only what is printed. No invented emails or walk-ins.",
+        title: "Your shop",
+        description: "Hours, prices, phone, and how you already take bookings.",
         preview: {
           kind: "instruction",
           icon: "layers",
