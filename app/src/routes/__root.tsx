@@ -84,6 +84,10 @@ function buildHead(meta: AppMeta) {
       { title },
       { name: "description", content: description },
       { name: "author", content: STUDIO_NAME },
+      {
+        name: "google-site-verification",
+        content: "pMnhxiCjozdRpYnYSiKRlSEX17qsMgZuKCkOUfhPfAk",
+      },
       { name: "theme-color", content: "#111214" },
       { name: "geo.region", content: "CA-QC" },
       { name: "geo.placename", content: "Montreal" },
