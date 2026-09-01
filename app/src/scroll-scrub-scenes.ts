@@ -13,10 +13,10 @@ export const scrollScrubTheme: ScrollScrubTheme = {
 export const scrollScrubScenes: ScrollScrubScene[] = [
   {
     align: "left",
-    body: "Your site is either doing the work or it is in the way.",
+    body: "Lacoste Designs rebuilds your website, or builds the one you do not have yet.",
     clip: "/assets/world/scene-01.mp4",
     id: "fracture",
-    kicker: "Lacoste Designs",
+    kicker: "Website design",
     label: "Film",
     linger: 0.16,
     mobileClip: "/assets/world/scene-01-mobile.mp4",

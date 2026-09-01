@@ -24,7 +24,10 @@ function Index() {
       <header className="ld-nav">
         <a className="ld-wordmark" href="/">
           <img alt="" src="/assets/logo.png" width={36} height={36} />
-          <span>Lacoste Designs</span>
+          <span>
+            Lacoste Designs
+            <em>Website design</em>
+          </span>
         </a>
         <nav>
           <a href="#offer">Offer</a>
@@ -38,16 +41,16 @@ function Index() {
 
       <section className="ld-offer" id="offer">
         <div className="ld-offer__col">
-          <h2>Rebuild what you have</h2>
+          <h2>We rebuild your website</h2>
           <p>
             Hours, prices, staff, and the booking door you already use. English
             first. French when the shop needs it.
           </p>
         </div>
         <div className="ld-offer__col">
-          <h2>Or build what you do not</h2>
+          <h2>Or we design one from zero</h2>
           <p>
-            No site yet. We still start from the door, the menu, and how you
+            No website yet. We still start from the door, the menu, and how you
             take bookings. Then it lives on a phone.
           </p>
         </div>
@@ -61,8 +64,8 @@ function Index() {
             <span>Only what is printed. No invented emails or walk-ins.</span>
           </li>
           <li>
-            <strong>Rebuild</strong>
-            <span>A fast preview on our domain. Your booking tool stays yours.</span>
+            <strong>Design</strong>
+            <span>A fast website preview on our domain. Your booking tool stays yours.</span>
           </li>
           <li>
             <strong>Yours</strong>
@@ -72,14 +75,14 @@ function Index() {
       </section>
 
       <section className="ld-close" id="close">
-        <p className="ld-close__kicker">Montreal</p>
-        <h2>Clean. Fast. Yours.</h2>
+        <p className="ld-close__kicker">Website design, Montreal</p>
+        <h2>A new site. Or a better one.</h2>
         <p>brandonlacoste9@gmail.com</p>
         <CloseMail />
       </section>
 
       <footer className="ld-foot">
-        <span>Lacoste Designs</span>
+        <span>Lacoste Designs. Website design.</span>
         <a href="mailto:brandonlacoste9@gmail.com">brandonlacoste9@gmail.com</a>
       </footer>
     </main>

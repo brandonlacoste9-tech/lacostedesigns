@@ -2,10 +2,10 @@ import { parseLandingContent } from "@higgsfield/app-landing";
 
 export const landingContent = parseLandingContent({
   hero: {
-    eyebrow: "Lacoste Designs",
+    eyebrow: "Website design",
     title: "Winning clients or losing them",
     description:
-      "We redesign your website. Or we build the one you do not have yet.",
+      "Lacoste Designs rebuilds your website, or builds the one you do not have yet.",
     primaryCta: { label: "Email Brandon", href: "mailto:brandonlacoste9@gmail.com" },
     secondaryCta: { label: "See the film", href: "/#fracture" },
   },
@@ -58,7 +58,7 @@ export const landingContent = parseLandingContent({
   },
   features: {
     title: "What you get",
-    description: "A site that holds on a phone and still books the chair.",
+    description: "A website that holds on a phone and still books the chair.",
     items: [
       {
         icon: "frame",
