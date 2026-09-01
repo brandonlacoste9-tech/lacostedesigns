@@ -13,7 +13,7 @@ export const Route = createFileRoute("/pricing")({
       {
         name: "description",
         content:
-          "Website design for shops and kitchens. Basic from $2,900 CAD. Advanced from $7,900. Monthly care from $175.",
+          "Website design for businesses. Basic from $2,900 CAD. Advanced from $7,900. Monthly care from $175.",
       },
       { property: "og:title", content: `Pricing · ${STUDIO_NAME}` },
     ],

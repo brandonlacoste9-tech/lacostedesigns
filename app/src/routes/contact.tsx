@@ -12,7 +12,7 @@ export const Route = createFileRoute("/contact")({
       { title: `Contact · ${STUDIO_NAME}` },
       {
         name: "description",
-        content: "Tell us about the shop or the kitchen.",
+        content: "Tell us about the business.",
       },
       { property: "og:title", content: `Contact · ${STUDIO_NAME}` },
     ],
