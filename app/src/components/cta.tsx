@@ -1,26 +1,30 @@
-export const MAIL = "mailto:brandonlacoste9@gmail.com";
-export const LABEL = "Start a project";
+import { useLang } from "@/i18n";
+
+export const CONTACT = "/contact";
 
 export function NavMail() {
+  const { t } = useLang();
   return (
-    <a className="nav-mail" href={MAIL}>
-      {LABEL}
+    <a className="nav-mail" href={CONTACT}>
+      {t.cta}
     </a>
   );
 }
 
 export function HeroMail() {
+  const { t } = useLang();
   return (
-    <a className="hero-mail" href={MAIL}>
-      {LABEL}
+    <a className="hero-mail" href={CONTACT}>
+      {t.cta}
     </a>
   );
 }
 
 export function CloseMail() {
+  const { t } = useLang();
   return (
-    <a className="close-mail" href={MAIL}>
-      {LABEL}
+    <a className="close-mail" href={CONTACT}>
+      {t.cta}
     </a>
   );
 }

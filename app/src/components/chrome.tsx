@@ -1,54 +1,90 @@
-import { LABEL, MAIL, NavMail } from "@/components/cta";
+import { CONTACT, NavMail } from "@/components/cta";
 import { STUDIO_NAME } from "@/lib/brand";
+import { useLang, type Lang } from "@/i18n";
 
-const LINKS = [
-  { href: "/#for", label: "For" },
-  { href: "/#work", label: "Work" },
-  { href: "/#offer", label: "Offer" },
-  { href: "/#method", label: "Method" },
-  { href: "/pricing", label: "Pricing" },
-] as const;
+export function SiteNav({
+  current,
+}: {
+  current?: "home" | "pricing" | "contact" | "work";
+}) {
+  const { t, lang, setLang } = useLang();
+  const links = [
+    { href: "/#work", label: t.navWork, id: "work" as const },
+    { href: "/#approach", label: t.navApproach, id: "home" as const },
+    { href: "/pricing", label: t.navPricing, id: "pricing" as const },
+    { href: "/contact", label: t.navContact, id: "contact" as const },
+  ];
 
-export function SiteNav({ current }: { current?: "home" | "pricing" }) {
   return (
     <header className="ld-nav">
       <a className="ld-wordmark" href="/">
-        <img alt="" src="/assets/logo.png" width={36} height={36} />
+        <img alt="" src="/assets/logo.svg" width={36} height={36} />
         <span>
           {STUDIO_NAME}
-          <em>Website design</em>
+          <em>{t.tagline}</em>
         </span>
       </a>
       <nav>
-        {LINKS.map((link) => (
+        {links.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            className={link.href === "/pricing" ? "ld-nav__price" : undefined}
-            aria-current={
-              current === "pricing" && link.href === "/pricing"
-                ? "page"
+            className={
+              link.id === "pricing" || link.id === "contact" || link.id === "work"
+                ? "ld-nav__keep"
                 : undefined
             }
+            aria-current={current === link.id ? "page" : undefined}
           >
             {link.label}
           </a>
         ))}
+        <LangSwitch lang={lang} setLang={setLang} />
         <NavMail />
       </nav>
     </header>
   );
 }
 
+function LangSwitch({
+  lang,
+  setLang,
+}: {
+  lang: Lang;
+  setLang: (lang: Lang) => void;
+}) {
+  return (
+    <span className="ld-lang">
+      <button
+        type="button"
+        aria-pressed={lang === "en"}
+        onClick={() => setLang("en")}
+      >
+        EN
+      </button>
+      <span aria-hidden="true">|</span>
+      <button
+        type="button"
+        aria-pressed={lang === "fr"}
+        onClick={() => setLang("fr")}
+      >
+        FR
+      </button>
+    </span>
+  );
+}
+
 export function SiteFoot() {
+  const { t } = useLang();
   return (
     <footer className="ld-foot">
       <span>
-        {STUDIO_NAME}. Independent website studio.
+        {STUDIO_NAME}. {t.footCity}. {t.footYear}.
       </span>
       <span className="ld-foot__links">
-        <a href="/pricing">Pricing</a>
-        <a href={MAIL}>{LABEL}</a>
+        <a href="/pricing">{t.navPricing}</a>
+        <a href="/contact">{t.navContact}</a>
+        <a href={CONTACT}>{t.cta}</a>
       </span>
     </footer>
   );

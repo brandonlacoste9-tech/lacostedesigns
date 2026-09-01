@@ -550,6 +550,7 @@
   line-height: 1;
 }
 
+.ld-price-card__from,
 .ld-price-card__amount span {
   display: block;
   margin-top: 0.45rem;
@@ -559,6 +560,11 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.ld-price-card__from {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
 }
 
 .ld-price-card__blurb,
@@ -636,8 +642,264 @@
   text-align: center;
 }
 
+.ld-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--ld-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+}
+
+.ld-lang button {
+  color: var(--ld-muted);
+  background: none;
+  border: 0;
+  padding: 0;
+  letter-spacing: 0.14em;
+}
+
+.ld-lang button[aria-pressed="true"],
+.ld-lang button:hover {
+  color: var(--ld-ink);
+}
+
+.ld-text-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  color: var(--ld-accent);
+  text-underline-offset: 0.28em;
+  text-decoration: underline;
+}
+
+.ld-recast {
+  display: grid;
+  gap: 2rem;
+  padding: 12vh 8vw;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+@media (min-width: 900px) {
+  .ld-recast {
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+  }
+}
+
+.ld-recast h2 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  max-width: 14ch;
+}
+
+.ld-recast p {
+  max-width: 38ch;
+  margin-top: 1rem;
+  color: var(--ld-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.ld-recast__shot img,
+.ld-work__featured img,
+.ld-case__shot {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid color-mix(in srgb, var(--ld-ink) 14%, transparent);
+}
+
+.ld-work__featured {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 2rem 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .ld-work__featured {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ld-work__featured a {
+  border-top: 0;
+  padding: 0;
+  gap: 0.45rem;
+}
+
+.ld-work__tag {
+  color: var(--ld-accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ld-work__more-title {
+  margin-top: 4rem;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 1.5rem;
+}
+
+.ld-work__rest a {
+  grid-template-columns: 112px 1fr;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.ld-work__rest a span {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.ld-work__thumb {
+  width: 112px;
+  height: 70px;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid color-mix(in srgb, var(--ld-ink) 14%, transparent);
+}
+
+.ld-approach {
+  padding: 12vh 8vw;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+.ld-approach h2 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  max-width: 14ch;
+}
+
+.ld-approach .ld-offer {
+  padding: 3rem 0 1rem;
+  border-top: 0;
+}
+
+.ld-approach .ld-offer h3 {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 1.5rem;
+}
+
+.ld-approach .ld-method {
+  padding: 0;
+}
+
+.ld-contact,
+.ld-case {
+  padding: 10vh 8vw 12vh;
+}
+
+.ld-contact h1,
+.ld-case h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  max-width: 16ch;
+}
+
+.ld-contact > p,
+.ld-case__body {
+  max-width: 46ch;
+  margin-top: 1.15rem;
+  color: var(--ld-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.ld-case__book {
+  margin: 1rem 0 2rem;
+  color: var(--ld-accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ld-case__shot {
+  margin: 1.5rem 0;
+}
+
+.ld-case__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.ld-form {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 36rem;
+  margin-top: 2.5rem;
+}
+
+.ld-form label,
+.ld-form legend {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--ld-ink);
+  font-size: 0.92rem;
+}
+
+.ld-form input,
+.ld-form select,
+.ld-form textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--ld-ink) 18%, transparent);
+  background: color-mix(in srgb, var(--ld-ink) 4%, transparent);
+  color: var(--ld-ink);
+}
+
+.ld-form textarea {
+  min-height: 8rem;
+}
+
+.ld-form fieldset {
+  display: flex;
+  gap: 1.5rem;
+  border: 0;
+  padding: 0;
+}
+
+.ld-form__check {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.ld-form__check input {
+  width: auto;
+  min-height: 0;
+}
+
+.ld-form__trap {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.ld-form .close-mail {
+  justify-self: start;
+  margin-top: 0.4rem;
+}
+
+.ld-form__ok,
+.ld-form__err {
+  margin-top: 1.5rem;
+  max-width: 40ch;
+}
+
+.ld-form__err {
+  color: #d27a6a;
+}
+
 @media (max-width: 860px) {
-  .ld-nav nav a:not(.nav-mail):not(.ld-nav__price) {
+  .ld-nav nav {
+    gap: 0.7rem;
+    font-size: 0.72rem;
+  }
+
+  .ld-nav nav a:not(.nav-mail):not(.ld-nav__keep) {
     display: none;
   }
 
@@ -651,6 +913,10 @@
   .ld-price-month,
   .ld-finance,
   .ld-price-notes,
+  .ld-recast,
+  .ld-approach,
+  .ld-contact,
+  .ld-case,
   .ld-foot {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
