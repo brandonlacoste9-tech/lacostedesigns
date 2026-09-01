@@ -1,100 +1,103 @@
 import { parseLandingContent } from "@higgsfield/app-landing";
 
-const TEMPLATE_PREVIEW = "/assets/landing/template-preview.svg";
-
-// TEMPLATE DEMO CONTENT. Replace it from the product AppBrief together with
-// product-specific step UI and owned result/showcase media before shipping.
 export const landingContent = parseLandingContent({
   hero: {
-    eyebrow: "Your focused workspace",
-    title: "Turn complex work into a clear, repeatable flow",
+    eyebrow: "Lacoste Design",
+    title: "Winning clients or losing them",
     description:
-      "Organize the important work, keep progress visible and move from idea to done without losing context.",
-    primaryCta: { label: "Open app", href: "/app" },
-    secondaryCta: { label: "See how it works", href: "#how-it-works" },
+      "We redesign your website. Or we build the one you do not have yet.",
+    primaryCta: { label: "Email Brandon", href: "mailto:brandonlacoste9@gmail.com" },
+    secondaryCta: { label: "See the film", href: "/#fracture" },
   },
   preview: {
-    kind: "route",
-    title: "Interactive app preview",
-    src: "/app?preview=1",
-    openHref: "/app",
-    openLabel: "Open full app",
+    kind: "media",
+    title: "The rebuild",
+    media: {
+      kind: "image",
+      src: "/assets/landing/film.png",
+      alt: "Glass website slab in a dark studio",
+    },
+    openHref: "/",
+    openLabel: "Open site",
   },
   steps: {
-    title: "Move forward in 3 easy steps",
-    description: "A focused workflow that keeps the next action obvious.",
+    title: "How it runs",
+    description: "Facts first. Then a preview. Then it is yours.",
     items: [
       {
-        title: "Capture the work",
-        description: "Add the items, files or ideas that need your attention.",
+        title: "Facts",
+        description: "Only what is printed. No invented emails or walk-ins.",
         preview: {
           kind: "instruction",
           icon: "layers",
-          title: "Open your workspace",
-          description: "Add the first item, file or idea",
+          title: "Read the shop",
+          description: "Hours, menu, booking door",
         },
       },
       {
-        title: "Shape the workflow",
-        description: "Organize priorities and choose the controls that fit your process.",
+        title: "Rebuild",
+        description: "A fast preview. Your booking tool stays yours.",
         preview: {
           kind: "action",
-          label: "Open app",
+          label: "Email Brandon",
         },
       },
       {
-        title: "Finish with confidence",
-        description: "Track progress, review the result and keep the next step moving.",
+        title: "Yours",
+        description: "Want it on your domain, or want something changed, say so.",
         preview: {
           kind: "result",
-          media: { kind: "image", src: TEMPLATE_PREVIEW, alt: "Completed workflow" },
+          media: {
+            kind: "image",
+            src: "/assets/landing/studio.png",
+            alt: "Finished studio still of the rebuilt site",
+          },
         },
       },
     ],
   },
   features: {
-    title: "Built for seamless progress",
-    description:
-      "The essential controls stay visible while secondary complexity stays out of the way.",
+    title: "What you get",
+    description: "A site that holds on a phone and still books the chair.",
     items: [
       {
-        icon: "layers",
-        title: "Clear structure",
-        description: "Keep related work together in a workspace that is easy to scan.",
+        icon: "frame",
+        title: "The real shop",
+        description: "Hours, prices, staff, and the booking door you already use.",
       },
       {
-        icon: "sliders",
-        title: "Flexible controls",
-        description: "Adapt views and settings to the task without crowding the main surface.",
+        icon: "image",
+        title: "A film, not a template",
+        description: "Scroll plays the rebuild. Dark, quiet, expensive.",
       },
       {
         icon: "check",
-        title: "Visible progress",
-        description: "Understand what changed, what is active and what needs attention next.",
+        title: "Yours when you want it",
+        description: "Preview first. Domain later. Changes on request.",
       },
     ],
   },
   showcase: {
-    title: "See the workspace in action",
-    description: "Explore the product's most important flows before opening the full app.",
+    title: "The work",
+    description: "A website as a physical object, broken and recast.",
     items: [
       {
-        label: "Overview",
-        media: { kind: "image", src: TEMPLATE_PREVIEW, alt: "Workspace overview" },
+        label: "Fracture",
+        media: { kind: "image", src: "/assets/landing/film.png", alt: "Cracked glass website slab" },
       },
       {
-        label: "Focused workflow",
-        media: { kind: "image", src: TEMPLATE_PREVIEW, alt: "Focused workflow view" },
+        label: "Recast",
+        media: { kind: "image", src: "/assets/landing/studio.png", alt: "Sleek rebuilt site in studio light" },
       },
       {
-        label: "Progress review",
-        media: { kind: "image", src: TEMPLATE_PREVIEW, alt: "Progress review view" },
+        label: "Hold",
+        media: { kind: "image", src: "/assets/landing/film.png", alt: "Still hold on the finished slab" },
       },
     ],
   },
   finalCta: {
-    title: "Ready to move your work forward?",
-    description: "Open the full workspace and start with the task that matters most.",
-    action: { label: "Open app", href: "/app" },
+    title: "Email Brandon",
+    description: "Clean. Fast. Yours.",
+    action: { label: "Email Brandon", href: "mailto:brandonlacoste9@gmail.com" },
   },
 });

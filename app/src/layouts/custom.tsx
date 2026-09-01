@@ -163,8 +163,8 @@ function Overview({
   return (
     <Page>
       <PageHeader
-        eyebrow="Workspace overview"
-        title="Keep your workspace moving"
+        eyebrow="Studio"
+        title="Lacoste Design"
         description="Track progress and move the most important work forward."
         actions={<NewItemModal onCreate={onCreate} />}
       />
@@ -327,7 +327,7 @@ export function CustomTemplate({ previewMode = false }: { previewMode?: boolean 
       inert={previewMode ? true : undefined}
     >
       <CustomAppShell
-        brand="Custom App"
+        brand="Lacoste Design"
         navigation={NAVIGATION}
         activeId={activeId}
         onNavigate={setActiveId}

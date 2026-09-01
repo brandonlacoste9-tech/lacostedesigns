@@ -1,24 +1,87 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { CloseMail, HeroMail, NavMail } from "@/components/cta";
 import { ScrollScrub } from "@/components/scroll-scrub/scroll-scrub";
-import { scrollScrubScenes, scrollScrubTheme } from "@/scroll-scrub-scenes";
+import {
+  scrollScrubScenes as baseScenes,
+  scrollScrubTheme,
+} from "@/scroll-scrub-scenes";
 
 export const Route = createFileRoute("/")({
-  // No title/description here on purpose: the home page inherits the site's
-  // editable page metadata from the root route (title/favicon/og), so a shared
-  // link to "/" shows the owner's values. Add a `head` here only to give a
-  // SPECIFIC page its own title/description.
   component: Index,
 });
 
-// The whole page IS the journey: the scrub controller owns media time, while
-// every chapter stays server-rendered in ordinary semantic flow. Compose the
-// site's own nav and bespoke CTAs around <ScrollScrub />; the engine
-// deliberately ships no header, no shared button system, and no scroll hint.
+const scenes = [
+  {
+    ...baseScenes[0]!,
+    actions: <HeroMail />,
+  },
+];
+
 function Index() {
   return (
-    <main>
-      <ScrollScrub scenes={scrollScrubScenes} theme={scrollScrubTheme} />
+    <main className="ld-page">
+      <header className="ld-nav">
+        <a className="ld-wordmark" href="/">
+          <img alt="" src="/assets/logo.png" width={36} height={36} />
+          <span>Lacoste Design</span>
+        </a>
+        <nav>
+          <a href="#offer">Offer</a>
+          <a href="#method">Method</a>
+          <a href="#close">Close</a>
+          <NavMail />
+        </nav>
+      </header>
+
+      <ScrollScrub scenes={scenes} theme={scrollScrubTheme} />
+
+      <section className="ld-offer" id="offer">
+        <div className="ld-offer__col">
+          <h2>Rebuild what you have</h2>
+          <p>
+            Hours, prices, staff, and the booking door you already use. English
+            first. French when the shop needs it.
+          </p>
+        </div>
+        <div className="ld-offer__col">
+          <h2>Or build what you do not</h2>
+          <p>
+            No site yet. We still start from the door, the menu, and how you
+            take bookings. Then it lives on a phone.
+          </p>
+        </div>
+      </section>
+
+      <section className="ld-method" id="method">
+        <h2>How it runs</h2>
+        <ol>
+          <li>
+            <strong>Facts</strong>
+            <span>Only what is printed. No invented emails or walk-ins.</span>
+          </li>
+          <li>
+            <strong>Rebuild</strong>
+            <span>A fast preview on our domain. Your booking tool stays yours.</span>
+          </li>
+          <li>
+            <strong>Yours</strong>
+            <span>Want it on your domain, or want something changed, say so.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section className="ld-close" id="close">
+        <p className="ld-close__kicker">Montreal</p>
+        <h2>Clean. Fast. Yours.</h2>
+        <p>brandonlacoste9@gmail.com</p>
+        <CloseMail />
+      </section>
+
+      <footer className="ld-foot">
+        <span>Lacoste Design</span>
+        <a href="mailto:brandonlacoste9@gmail.com">brandonlacoste9@gmail.com</a>
+      </footer>
     </main>
   );
 }
