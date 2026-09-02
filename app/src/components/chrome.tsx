@@ -10,7 +10,7 @@ export function SiteNav({
   const { t, lang, setLang } = useLang();
   const links = [
     { href: "/#work", label: t.navWork, id: "work" as const },
-    { href: "/#services", label: t.navServices, id: "home" as const },
+    { href: "/#approach", label: t.navApproach, id: "home" as const },
     { href: "/pricing", label: t.navPricing, id: "pricing" as const },
     { href: "/contact", label: t.navContact, id: "contact" as const },
   ];
