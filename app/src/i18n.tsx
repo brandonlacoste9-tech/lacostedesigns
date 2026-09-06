@@ -29,7 +29,7 @@ export const COPY = {
     recastLink: "See the case",
     forTitle: "Any website. One studio.",
     forBody:
-      "If you take clients, we can rebuild the site. Any city. The booking door you already use stays.",
+      "We rebuild your website, or we build the first one. Booksy, Setmore, OpenTable, or the form you already use — that stays. Any business. Any city.",
     workTitle: "Selected work",
     workAside: "Previews. Not live on their own domains unless they asked.",
     workPreview: "Preview",
@@ -345,7 +345,7 @@ export const COPY = {
     recastLink: "Voir le cas",
     forTitle: "N'importe quel site. Un studio.",
     forBody:
-      "Si vous prenez des clients, on peut refaire le site. N'importe quelle ville. La porte de réservation que vous utilisez déjà reste.",
+      "Nous refaisons votre site, ou nous construisons le premier. Booksy, Setmore, OpenTable, ou le formulaire que vous utilisez déjà — ça reste. N'importe quelle entreprise. N'importe quelle ville.",
     workTitle: "Travail choisi",
     workAside:
       "Aperçus. Pas en ligne sur leurs propres domaines, sauf s'ils l'ont demandé.",
