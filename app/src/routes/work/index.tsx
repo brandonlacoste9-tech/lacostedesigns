@@ -5,7 +5,7 @@ import { CloseMail } from "@/components/cta";
 import { STUDIO_NAME } from "@/lib/brand";
 import { pageHead } from "@/lib/seo";
 import { useLang } from "@/i18n";
-import { FEATURED, REST } from "@/work";
+import { FEATURED, REST, kindKey } from "@/work";
 
 export const Route = createFileRoute("/work/")({
   component: WorkIndex,
@@ -40,7 +40,7 @@ function WorkIndex() {
                 ) : null}
                 <strong>{item.name}</strong>
                 <span className="ld-work__city">
-                  {lang === "fr" ? item.cityFr : item.city}
+                  {lang === "fr" ? item.cityFr : item.city} · {t[kindKey(item.kind)]}
                 </span>
                 <span className="ld-work__note">
                   {lang === "fr" ? item.noteFr : item.note}
@@ -66,7 +66,7 @@ function WorkIndex() {
                 <span>
                   <strong>{item.name}</strong>
                   <span className="ld-work__city">
-                    {lang === "fr" ? item.cityFr : item.city}
+                    {lang === "fr" ? item.cityFr : item.city} · {t[kindKey(item.kind)]}
                   </span>
                   <span className="ld-work__note">
                     {lang === "fr" ? item.noteFr : item.note}

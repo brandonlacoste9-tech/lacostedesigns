@@ -11,7 +11,7 @@ import {
   scrollScrubScenes as baseScenes,
   scrollScrubTheme,
 } from "@/scroll-scrub-scenes";
-import { FEATURED, REST } from "@/work";
+import { FEATURED, REST, WORK, WORK_CITIES } from "@/work";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -66,6 +66,64 @@ function Index() {
       <section className="ld-for" id="area">
         <h2>{t.forTitle}</h2>
         <p>{t.forBody}</p>
+      </section>
+
+
+      <section className="ld-industries" id="industries">
+        <header>
+          <p className="ld-close__kicker">{t.indKicker}</p>
+          <h2>{t.indTitle}</h2>
+          <p>{t.indBody}</p>
+        </header>
+        <div className="ld-svc-grid">
+          <article className="ld-svc">
+            <h3>{t.indShop}</h3>
+            <p>{t.indShopB}</p>
+          </article>
+          <article className="ld-svc">
+            <h3>{t.indKitchen}</h3>
+            <p>{t.indKitchenB}</p>
+          </article>
+          <article className="ld-svc">
+            <h3>{t.indBuilder}</h3>
+            <p>{t.indBuilderB}</p>
+          </article>
+          <article className="ld-svc">
+            <h3>{t.indAuto}</h3>
+            <p>{t.indAutoB}</p>
+          </article>
+          <article className="ld-svc">
+            <h3>{t.indHouse}</h3>
+            <p>{t.indHouseB}</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="ld-results" id="proof-numbers">
+        <header>
+          <p className="ld-close__kicker">{t.resKicker}</p>
+          <h2>{t.resTitle}</h2>
+          <p>{t.resBody}</p>
+        </header>
+        <ul className="ld-results__nums">
+          <li>
+            <strong>{WORK.length}</strong>
+            <span>{t.resSites}</span>
+          </li>
+          <li>
+            <strong>{WORK_CITIES.length}</strong>
+            <span>{t.resCities}</span>
+          </li>
+          <li>
+            <strong>EN / FR</strong>
+            <span>{t.resLang}</span>
+          </li>
+        </ul>
+        <p>
+          <a className="ld-text-link" href="/reviews">
+            {t.resLink}
+          </a>
+        </p>
       </section>
 
       <section className="ld-services" id="services">
@@ -259,6 +317,37 @@ function Index() {
           <li>
             <strong>{t.faq7Q}</strong>
             <span>{t.faq7A}</span>
+          </li>
+
+          <li>
+            <strong>{t.faq8Q}</strong>
+            <span>{t.faq8A}</span>
+          </li>
+          <li>
+            <strong>{t.faq9Q}</strong>
+            <span>{t.faq9A}</span>
+          </li>
+        </ol>
+      </section>
+
+
+      <section className="ld-proof" id="guarantee">
+        <header>
+          <p className="ld-close__kicker">{t.guarKicker}</p>
+          <h2>{t.guarTitle}</h2>
+        </header>
+        <ol>
+          <li>
+            <strong>{t.guar1T}</strong>
+            <span>{t.guar1B}</span>
+          </li>
+          <li>
+            <strong>{t.guar2T}</strong>
+            <span>{t.guar2B}</span>
+          </li>
+          <li>
+            <strong>{t.guar3T}</strong>
+            <span>{t.guar3B}</span>
           </li>
         </ol>
       </section>

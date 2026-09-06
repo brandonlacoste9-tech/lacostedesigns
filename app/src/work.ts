@@ -1,5 +1,8 @@
+export type WorkKind = "shop" | "kitchen" | "builder" | "auto" | "house";
+
 export type WorkItem = {
   slug: string;
+  kind: WorkKind;
   name: string;
   city: string;
   cityFr: string;
@@ -17,6 +20,7 @@ export const WORK: WorkItem[] = [
 
   {
     slug: "hasler-homes",
+    kind: "builder",
     name: "Hasler Homes",
     city: "North Vancouver",
     cityFr: "North Vancouver",
@@ -32,6 +36,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "une-maison",
+    kind: "builder",
     name: "Une Maison",
     city: "Laurentides",
     cityFr: "Laurentides",
@@ -47,6 +52,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "velare",
+    kind: "auto",
     name: "VELARE Montréal",
     city: "Kirkland",
     cityFr: "Kirkland",
@@ -62,6 +68,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "ivory-rook",
+    kind: "house",
     name: "Ivory Rook House",
     city: "Miami",
     cityFr: "Miami",
@@ -77,6 +84,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "vk-group",
+    kind: "builder",
     name: "VK Group",
     city: "Montréal",
     cityFr: "Montréal",
@@ -92,6 +100,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "metric-homes",
+    kind: "builder",
     name: "Metric Homes",
     city: "Ottawa",
     cityFr: "Ottawa",
@@ -107,6 +116,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "b-barbier",
+    kind: "shop",
     name: "B Barbier et Coiffure",
     city: "Montréal",
     cityFr: "Montréal",
@@ -122,6 +132,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "jack-of-fades",
+    kind: "shop",
     name: "Jack of fades",
     city: "Montréal",
     cityFr: "Montréal",
@@ -137,6 +148,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "scarolies",
+    kind: "kitchen",
     name: "Scarolie's Pasta Emporium",
     city: "Pointe-Claire",
     cityFr: "Pointe-Claire",
@@ -152,6 +164,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "colibri",
+    kind: "shop",
     name: "Colibri Tattoo & Piercing",
     city: "Montréal",
     cityFr: "Montréal",
@@ -168,6 +181,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "hairchitect",
+    kind: "shop",
     name: "Salon Hairchitect",
     city: "Laval",
     cityFr: "Laval",
@@ -179,6 +193,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "one-three",
+    kind: "shop",
     name: "One Three Barber Studio",
     city: "Dollard-Des-Ormeaux",
     cityFr: "Dollard-Des-Ormeaux",
@@ -190,6 +205,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "calgary-barber",
+    kind: "shop",
     name: "Calgary Barber Shop",
     city: "Calgary",
     cityFr: "Calgary",
@@ -201,6 +217,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "malo",
+    kind: "shop",
     name: "Malo Salon de Barbier",
     city: "Montréal",
     cityFr: "Montréal",
@@ -212,6 +229,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "rose-rebel",
+    kind: "shop",
     name: "Rose & Rebel Salon",
     city: "Ottawa",
     cityFr: "Ottawa",
@@ -223,6 +241,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "intermezzo",
+    kind: "kitchen",
     name: "Intermezzo Restaurant and Wine Cellar",
     city: "Vernon",
     cityFr: "Vernon",
@@ -234,6 +253,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "aryana",
+    kind: "kitchen",
     name: "Restaurant Aryana",
     city: "Île-Perrot",
     cityFr: "Île-Perrot",
@@ -245,6 +265,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "joes",
+    kind: "kitchen",
     name: "Joe's Italian Kitchen",
     city: "Ottawa",
     cityFr: "Ottawa",
@@ -256,6 +277,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "wellington",
+    kind: "kitchen",
     name: "The Wellington Diner",
     city: "Ottawa",
     cityFr: "Ottawa",
@@ -267,6 +289,7 @@ export const WORK: WorkItem[] = [
   },
   {
     slug: "lous",
+    kind: "kitchen",
     name: "Lou's Pointe-Claire",
     city: "Pointe-Claire",
     cityFr: "Pointe-Claire",
@@ -283,4 +306,14 @@ export const REST = WORK.filter((item) => !item.featured);
 
 export function workBySlug(slug: string) {
   return WORK.find((item) => item.slug === slug);
+}
+
+export const WORK_CITIES = [...new Set(WORK.map((item) => item.city))];
+
+export function kindKey(kind: WorkKind) {
+  if (kind === "kitchen") return "kindKitchen" as const;
+  if (kind === "builder") return "kindBuilder" as const;
+  if (kind === "auto") return "kindAuto" as const;
+  if (kind === "house") return "kindHouse" as const;
+  return "kindShop" as const;
 }

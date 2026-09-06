@@ -1101,3 +1101,79 @@
 
 .ld-page { overflow-x: clip; }
 .ld-foot__links { flex-wrap: wrap; }
+
+.ld-industries,
+.ld-results,
+.ld-reviews {
+  padding: 12vh 8vw;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+.ld-industries > header,
+.ld-results > header,
+.ld-reviews > header {
+  max-width: 52ch;
+}
+.ld-industries h2,
+.ld-results h2,
+.ld-reviews h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  max-width: 16ch;
+}
+.ld-industries > header p,
+.ld-results > header p,
+.ld-reviews > header p {
+  max-width: 52ch;
+  margin-top: 1.1rem;
+  color: var(--ld-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.ld-results__nums {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 800px) {
+  .ld-results__nums {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.ld-results__nums li {
+  display: grid;
+  gap: 0.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+.ld-results__nums strong {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+}
+.ld-results__nums span,
+.ld-results p {
+  color: var(--ld-muted);
+  max-width: 28ch;
+}
+.ld-results > p {
+  margin-top: 2rem;
+}
+.ld-reviews-list {
+  margin-top: 2.5rem;
+  display: grid;
+}
+.ld-reviews-list a {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+.ld-reviews-list a:hover strong {
+  color: var(--ld-accent);
+}
+.ld-reviews-list strong {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+}
+@media (max-width: 860px) {
+  

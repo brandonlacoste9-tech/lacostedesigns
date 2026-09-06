@@ -23,6 +23,7 @@ export function InquiryForm() {
       hasSite: data.get("hasSite") === "no" ? "no" : "yes",
       booking: String(data.get("booking") ?? ""),
       need: String(data.get("need") ?? "unsure"),
+      when: String(data.get("when") ?? "unsure"),
       plan: String(data.get("plan") ?? "unsure"),
       reach: String(data.get("reach") ?? ""),
       message: String(data.get("message") ?? ""),
@@ -88,6 +89,15 @@ export function InquiryForm() {
           <option value="search">{t.fieldNeedSearch}</option>
           <option value="care">{t.fieldNeedCare}</option>
           <option value="unsure">{t.fieldNeedUnsure}</option>
+        </select>
+      </label>
+      <label>
+        {t.fieldWhen}
+        <select name="when" defaultValue="unsure">
+          <option value="soon">{t.fieldWhenSoon}</option>
+          <option value="month">{t.fieldWhenMonth}</option>
+          <option value="later">{t.fieldWhenLater}</option>
+          <option value="unsure">{t.fieldWhenUnsure}</option>
         </select>
       </label>
       <label>

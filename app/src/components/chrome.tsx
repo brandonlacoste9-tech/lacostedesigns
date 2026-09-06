@@ -12,7 +12,8 @@ type NavId =
   | "privacy"
   | "services"
   | "notes"
-  | "terms";
+  | "terms"
+  | "reviews";
 
 export function SiteNav({ current }: { current?: NavId }) {
   const { t, lang, setLang } = useLang();
@@ -25,6 +26,7 @@ export function SiteNav({ current }: { current?: NavId }) {
       keep: true,
     },
     { href: "/pricing", label: t.navPricing, id: "pricing" as const, keep: false },
+    { href: "/reviews", label: t.navReviews, id: "reviews" as const, keep: false },
     { href: "/contact", label: t.navContact, id: "contact" as const, keep: true },
   ];
 
@@ -92,6 +94,7 @@ export function SiteFoot() {
       </span>
       <span className="ld-foot__links">
         <a href="/work">{t.navWork}</a>
+        <a href="/reviews">{t.navReviews}</a>
         <a href="/services">{t.navServices}</a>
         <a href="/approach">{t.navApproach}</a>
         <a href="/pricing">{t.navPricing}</a>
