@@ -1,4 +1,6 @@
 import { STUDIO_NAME } from "./brand";
+import { NOTES } from "./notes";
+import { WORK } from "@/work";
 
 export const SITE_ORIGIN = "https://lacostedesigns.com";
 export const STUDIO_EMAIL = "lacostedesigns@protonmail.com";
@@ -50,6 +52,34 @@ export function pageHead(opts: {
   };
 }
 
+
+export const SITE_PAGES: { path: string; priority: string; changefreq: string }[] =
+  [
+    { path: "/", priority: "1.0", changefreq: "weekly" },
+    { path: "/services", priority: "0.9", changefreq: "monthly" },
+    { path: "/services/websites", priority: "0.8", changefreq: "monthly" },
+    { path: "/services/seo", priority: "0.9", changefreq: "monthly" },
+    { path: "/services/care", priority: "0.8", changefreq: "monthly" },
+    { path: "/work", priority: "0.8", changefreq: "weekly" },
+    { path: "/approach", priority: "0.7", changefreq: "monthly" },
+    { path: "/pricing", priority: "0.9", changefreq: "monthly" },
+    { path: "/studio", priority: "0.6", changefreq: "monthly" },
+    { path: "/notes", priority: "0.7", changefreq: "weekly" },
+    { path: "/contact", priority: "0.9", changefreq: "monthly" },
+    { path: "/privacy", priority: "0.3", changefreq: "yearly" },
+    { path: "/terms", priority: "0.3", changefreq: "yearly" },
+    ...WORK.map((item) => ({
+      path: `/work/${item.slug}`,
+      priority: "0.7",
+      changefreq: "monthly",
+    })),
+    ...NOTES.map((item) => ({
+      path: `/notes/${item.slug}`,
+      priority: "0.6",
+      changefreq: "monthly",
+    })),
+  ];
+
 export const BUSINESS_JSON = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [
@@ -62,7 +92,7 @@ export const BUSINESS_JSON = JSON.stringify({
       image: `${SITE_ORIGIN}/assets/logo.svg`,
       logo: `${SITE_ORIGIN}/assets/logo.svg`,
       description:
-        "Website design for businesses in Montreal and the West Island. We rebuild yours, or we build the one you do not have yet.",
+        "Website design, local search, and monthly care for businesses in Montreal and the West Island.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Montreal",
@@ -105,11 +135,28 @@ export const BUSINESS_JSON = JSON.stringify({
             },
             url: `${SITE_ORIGIN}/pricing`,
           },
+
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Local search",
+              url: `${SITE_ORIGIN}/services/seo`,
+            },
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: "1200",
+              priceCurrency: "CAD",
+              minPrice: "1200",
+            },
+            url: `${SITE_ORIGIN}/pricing`,
+          },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
               name: "Care",
+              url: `${SITE_ORIGIN}/services/care`,
             },
             priceSpecification: {
               "@type": "UnitPriceSpecification",
@@ -129,6 +176,22 @@ export const BUSINESS_JSON = JSON.stringify({
       name: STUDIO_NAME,
       inLanguage: ["en-CA", "fr-CA"],
       publisher: { "@id": `${SITE_ORIGIN}/#studio` },
+    },
+    {
+      "@type": "Question",
+      name: "Do you do SEO?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Google Business, titles, schema, and a sitemap. Search is a line of work, not a buzzword on the homepage.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is care?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Hosting, SSL, backups, uptime watch, and small copy edits. $175 a month. Stop any month.",
+      },
     },
   ],
 });
@@ -167,6 +230,22 @@ export const HOME_FAQ_JSON = JSON.stringify({
       acceptedAnswer: {
         "@type": "Answer",
         text: "English first. French when the business already uses it.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you do SEO?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Google Business, titles, schema, and a sitemap. Search is a line of work, not a buzzword on the homepage.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is care?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Hosting, SSL, backups, uptime watch, and small copy edits. $175 a month. Stop any month.",
       },
     },
   ],

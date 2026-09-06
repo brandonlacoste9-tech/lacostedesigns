@@ -2,16 +2,29 @@ import { CONTACT, NavMail } from "@/components/cta";
 import { STUDIO_NAME } from "@/lib/brand";
 import { useLang, type Lang } from "@/i18n";
 
-export function SiteNav({
-  current,
-}: {
-  current?: "home" | "pricing" | "contact" | "work" | "approach" | "studio" | "privacy";
-}) {
+type NavId =
+  | "home"
+  | "pricing"
+  | "contact"
+  | "work"
+  | "approach"
+  | "studio"
+  | "privacy"
+  | "services"
+  | "notes"
+  | "terms";
+
+export function SiteNav({ current }: { current?: NavId }) {
   const { t, lang, setLang } = useLang();
   const links = [
     { href: "/work", label: t.navWork, id: "work" as const, keep: true },
-    { href: "/approach", label: t.navApproach, id: "approach" as const, keep: false },
-    { href: "/pricing", label: t.navPricing, id: "pricing" as const, keep: true },
+    {
+      href: "/services",
+      label: t.navServices,
+      id: "services" as const,
+      keep: true,
+    },
+    { href: "/pricing", label: t.navPricing, id: "pricing" as const, keep: false },
     { href: "/contact", label: t.navContact, id: "contact" as const, keep: true },
   ];
 
@@ -79,10 +92,13 @@ export function SiteFoot() {
       </span>
       <span className="ld-foot__links">
         <a href="/work">{t.navWork}</a>
+        <a href="/services">{t.navServices}</a>
         <a href="/approach">{t.navApproach}</a>
         <a href="/pricing">{t.navPricing}</a>
+        <a href="/notes">{t.navNotes}</a>
         <a href="/studio">{t.navStudio}</a>
         <a href="/privacy">{t.footPrivacy}</a>
+        <a href="/terms">{t.footTerms}</a>
         <a href="/contact">{t.navContact}</a>
         <a href="mailto:lacostedesigns@protonmail.com">
           lacostedesigns@protonmail.com

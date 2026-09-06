@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
     pageHead({
       title: `${STUDIO_NAME} · Website design, Montreal and West Island`,
       description:
-        "Website design for businesses in Montreal and the West Island. We rebuild yours, or we build the one you do not have yet. English first. French when you need it.",
+        "Website design, local search, and monthly care for businesses in Montreal and the West Island. We rebuild yours, or we build the one you do not have yet.",
       path: "/",
     }),
 });
@@ -66,6 +66,79 @@ function Index() {
       <section className="ld-for" id="area">
         <h2>{t.forTitle}</h2>
         <p>{t.forBody}</p>
+      </section>
+
+      <section className="ld-services" id="services">
+        <header>
+          <p className="ld-close__kicker">{t.svcKicker}</p>
+          <h2>{t.svcTitle}</h2>
+          <p>{t.svcBody}</p>
+        </header>
+        <div className="ld-svc-grid">
+          <article className="ld-svc">
+            <h3>{t.svcWebTitle}</h3>
+            <p>{t.svcWebBody}</p>
+            <a className="ld-text-link" href="/services/websites">
+              {t.svcLink}
+            </a>
+          </article>
+          <article className="ld-svc">
+            <h3>{t.svcSeoTitle}</h3>
+            <p>{t.svcSeoBody}</p>
+            <a className="ld-text-link" href="/services/seo">
+              {t.svcLink}
+            </a>
+          </article>
+          <article className="ld-svc">
+            <h3>{t.svcCareTitle}</h3>
+            <p>{t.svcCareBody}</p>
+            <a className="ld-text-link" href="/services/care">
+              {t.svcLink}
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section className="ld-proof" id="on-every-site">
+        <header>
+          <p className="ld-close__kicker">{t.proofKicker}</p>
+          <h2>{t.proofTitle}</h2>
+          <p>{t.proofBody}</p>
+        </header>
+        <ol>
+          <li>
+            <strong>{t.proof1T}</strong>
+            <span>{t.proof1B}</span>
+          </li>
+          <li>
+            <strong>{t.proof2T}</strong>
+            <span>{t.proof2B}</span>
+          </li>
+          <li>
+            <strong>{t.proof3T}</strong>
+            <span>{t.proof3B}</span>
+          </li>
+          <li>
+            <strong>{t.proof4T}</strong>
+            <span>{t.proof4B}</span>
+          </li>
+          <li>
+            <strong>{t.proof5T}</strong>
+            <span>{t.proof5B}</span>
+          </li>
+          <li>
+            <strong>{t.proof6T}</strong>
+            <span>{t.proof6B}</span>
+          </li>
+          <li>
+            <strong>{t.proof7T}</strong>
+            <span>{t.proof7B}</span>
+          </li>
+          <li>
+            <strong>{t.proof8T}</strong>
+            <span>{t.proof8B}</span>
+          </li>
+        </ol>
       </section>
 
       <section className="ld-work" id="work">
@@ -149,6 +222,10 @@ function Index() {
             <strong>{t.step3Title}</strong>
             <span>{t.step3Body}</span>
           </li>
+          <li>
+            <strong>{t.step4Title}</strong>
+            <span>{t.step4Body}</span>
+          </li>
         </ol>
       </section>
 
@@ -170,6 +247,18 @@ function Index() {
           <li>
             <strong>{t.faq4Q}</strong>
             <span>{t.faq4A}</span>
+          </li>
+          <li>
+            <strong>{t.faq5Q}</strong>
+            <span>{t.faq5A}</span>
+          </li>
+          <li>
+            <strong>{t.faq6Q}</strong>
+            <span>{t.faq6A}</span>
+          </li>
+          <li>
+            <strong>{t.faq7Q}</strong>
+            <span>{t.faq7A}</span>
           </li>
         </ol>
       </section>

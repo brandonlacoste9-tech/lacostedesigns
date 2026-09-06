@@ -22,6 +22,7 @@ export function InquiryForm() {
       city: String(data.get("city") ?? ""),
       hasSite: data.get("hasSite") === "no" ? "no" : "yes",
       booking: String(data.get("booking") ?? ""),
+      need: String(data.get("need") ?? "unsure"),
       plan: String(data.get("plan") ?? "unsure"),
       reach: String(data.get("reach") ?? ""),
       message: String(data.get("message") ?? ""),
@@ -79,6 +80,15 @@ export function InquiryForm() {
       <label>
         {t.fieldBooking}
         <input name="booking" required minLength={2} maxLength={160} />
+      </label>
+      <label>
+        {t.fieldNeed}
+        <select name="need" defaultValue="unsure">
+          <option value="website">{t.fieldNeedSite}</option>
+          <option value="search">{t.fieldNeedSearch}</option>
+          <option value="care">{t.fieldNeedCare}</option>
+          <option value="unsure">{t.fieldNeedUnsure}</option>
+        </select>
       </label>
       <label>
         {t.fieldPlan}

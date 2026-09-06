@@ -12,7 +12,7 @@ export const Route = createFileRoute("/pricing")({
     pageHead({
       title: `Website pricing in Montreal · ${STUDIO_NAME}`,
       description:
-        "Website design in Montreal and the West Island. Basic from $2,900 CAD. Advanced from $7,900. Monthly care from $175.",
+        "Website design in Montreal and the West Island. Basic from $2,900 CAD. Advanced from $7,900. Search from $1,200. Monthly care $175.",
       path: "/pricing",
     }),
 });
@@ -63,6 +63,24 @@ function Pricing() {
             <li>{t.advanced3}</li>
             <li>{t.advanced4}</li>
             <li>{t.advanced5}</li>
+          </ul>
+          <CloseMail />
+        </article>
+        <article className="ld-price-card">
+          <p className="ld-price-card__kicker">{t.searchKicker}</p>
+          <h2>{t.searchName}</h2>
+          <p className="ld-price-card__amount">
+            <span className="ld-price-card__from">{t.basicFrom}</span>
+            $1,200
+            <span>{t.basicCad}</span>
+          </p>
+          <p className="ld-price-card__blurb">{t.searchBlurb}</p>
+          <ul>
+            <li>{t.search1}</li>
+            <li>{t.search2}</li>
+            <li>{t.search3}</li>
+            <li>{t.search4}</li>
+            <li>{t.search5}</li>
           </ul>
           <CloseMail />
         </article>

@@ -926,3 +926,178 @@
     padding-right: 1.25rem;
   }
 }
+
+.ld-work__intro {
+  max-width: 46ch;
+  margin-top: 1.15rem;
+  color: var(--ld-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.ld-services,
+.ld-proof,
+.ld-notes,
+.ld-legal {
+  padding: 12vh 8vw;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+.ld-services > header,
+.ld-proof > header,
+.ld-notes > header {
+  max-width: 52ch;
+}
+
+.ld-services h2,
+.ld-proof h2,
+.ld-notes h1,
+.ld-legal h1,
+.ld-services h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  max-width: 16ch;
+}
+
+.ld-services > header p,
+.ld-proof > header p,
+.ld-notes > header p,
+.ld-legal p,
+.ld-article p {
+  max-width: 52ch;
+  margin-top: 1.1rem;
+  color: var(--ld-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.ld-svc-grid {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .ld-svc-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.ld-svc {
+  display: grid;
+  gap: 0.7rem;
+  align-content: start;
+  padding: 1.4rem 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+.ld-svc h3,
+.ld-svc h2 {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+  max-width: none;
+}
+
+.ld-svc p {
+  color: var(--ld-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+  max-width: 36ch;
+}
+
+.ld-proof ol {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .ld-proof ol {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+  }
+}
+
+.ld-proof li {
+  display: grid;
+  gap: 0.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+.ld-proof strong {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 1.25rem;
+}
+
+.ld-notes-list {
+  margin-top: 2.5rem;
+  display: grid;
+}
+
+.ld-notes-list a {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--ld-ink) 12%, transparent);
+}
+
+.ld-notes-list a:hover strong {
+  color: var(--ld-accent);
+}
+
+.ld-notes-list strong {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+}
+
+.ld-article {
+  padding: 10vh 8vw 12vh;
+}
+
+.ld-article h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  max-width: 16ch;
+}
+
+.ld-legal ul {
+  margin-top: 1.5rem;
+  max-width: 52ch;
+  display: grid;
+  gap: 0.75rem;
+  color: var(--ld-muted);
+  line-height: 1.55;
+}
+
+.ld-contact .ld-price-card__amount {
+  margin-top: 1.5rem;
+}
+
+.ld-foot {
+  row-gap: 1rem;
+}
+
+.ld-foot__links {
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1100px) {
+  .ld-price-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .ld-services,
+  .ld-proof,
+  .ld-notes,
+  .ld-legal,
+  .ld-article {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.ld-page { overflow-x: clip; }
+.ld-foot__links { flex-wrap: wrap; }

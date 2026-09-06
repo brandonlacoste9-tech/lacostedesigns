@@ -42,7 +42,7 @@ function WorkCase() {
       <SiteNav current="work" />
       <article className="ld-case">
         <p>
-          <a className="ld-text-link" href="/#work">
+          <a className="ld-text-link" href="/work">
             {t.workBack}
           </a>
         </p>

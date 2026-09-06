@@ -12,7 +12,7 @@ export const Route = createFileRoute("/contact")({
     pageHead({
       title: `Contact a Montreal web designer · ${STUDIO_NAME}`,
       description:
-        "Start a website project in Montreal or the West Island. Tell us about the business. We write back with which number fits.",
+        "Start a website, search, or care project in Montreal or the West Island. Tell us about the business. We write back with which number fits.",
       path: "/contact",
     }),
 });
@@ -26,12 +26,27 @@ function Contact() {
         <p className="ld-close__kicker">{t.contactKicker}</p>
         <h1>{t.contactTitle}</h1>
         <p>{t.contactBody}</p>
+        <p>{t.contactReply}</p>
         <p>
           <a className="ld-text-link" href="mailto:lacostedesigns@protonmail.com">
             lacostedesigns@protonmail.com
           </a>
         </p>
         <InquiryForm />
+      </section>
+      <section className="ld-method">
+        <h2>{t.contactNextTitle}</h2>
+        <ol>
+          <li>
+            <strong>{t.contactNext1}</strong>
+          </li>
+          <li>
+            <strong>{t.contactNext2}</strong>
+          </li>
+          <li>
+            <strong>{t.contactNext3}</strong>
+          </li>
+        </ol>
       </section>
       <SiteFoot />
     </main>
