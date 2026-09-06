@@ -15,6 +15,7 @@ export const COPY = {
     navApproach: "Approach",
     navPricing: "Pricing",
     navContact: "Contact",
+    navStudio: "Studio",
     cta: "Start a project",
     tagline: "Website design",
     heroKicker: "Website design, Montreal and West Island",
@@ -35,7 +36,13 @@ export const COPY = {
     workMore: "More rebuilds",
     workOpen: "Open the preview",
     workBack: "All work",
+    workPageTitle: "Selected work",
+    workPageBody:
+      "Rebuilds for shops, salons, and restaurants. Hours, prices, and the booking door they already use.",
     approachTitle: "How a new site gets made",
+    approachPageTitle: "How a new site gets made",
+    approachPageBody:
+      "We start from the business you already run. Then a preview on our domain. Then it is yours.",
     offerRebuildTitle: "We rebuild your website",
     offerRebuildBody:
       "Hours, prices, staff, and the booking door you already use. English first. French when the business needs it.",
@@ -51,11 +58,15 @@ export const COPY = {
     step3Title: "Then it is yours",
     step3Body:
       "Put it on your domain when you are ready. Want something changed, say so.",
+    step4Title: "Care, if you want it",
+    step4Body:
+      "Hosting, watch, and small copy edits at $175 a month. Stop any month.",
     closeKicker: "Website design, Montreal and West Island",
     closeTitle: "A new site. Or a better one.",
     closeBody: "Tell us about the business.",
     footCity: "Montreal and West Island",
     footYear: "2026",
+    footPrivacy: "Privacy",
     priceKicker: "Pricing",
     priceTitle: "Clear numbers. No games.",
     priceIntro:
@@ -115,6 +126,29 @@ export const COPY = {
     contactKicker: "Montreal and West Island",
     contactTitle: "Tell us about the business",
     contactBody: "We will say which number fits before any work starts.",
+    contactReply: "We reply within one business day.",
+    contactNextTitle: "What happens next",
+    contactNext1: "You tell us the business, the city, and how people book.",
+    contactNext2: "We write back with which number fits. No work starts before that.",
+    contactNext3: "You get a preview on our domain. Then it goes on yours.",
+    studioTitle: "An independent website studio",
+    studioBody:
+      "Lacoste Designs rebuilds websites for businesses in Montreal and the West Island. Not a forty-person agency. A studio that starts from the facts of the shop.",
+    studioWhere:
+      "Pointe-Claire, Dollard-Des-Ormeaux, Île-Perrot, Laval, and the rest of the island. If the business is here, we can rebuild the site.",
+    studioDoTitle: "What we do",
+    studioDoBody:
+      "Websites. A rebuild or a first site. English first. French when the business already uses it. Booksy, Setmore, Square, OpenTable, or whatever you print stays.",
+    studioDontTitle: "What we do not do",
+    studioDontBody:
+      "No apps. No giant web store. No six-month rebrand. No forcing a new booking tool. The site, the facts, the phone.",
+    privacyTitle: "Privacy",
+    privacyIntro:
+      "The contact form sends the business name, city, how people book, and a way to reach you.",
+    privacy1: "We read it to reply and say which price fits.",
+    privacy2: "We do not sell this information. We do not put it on a mailing list.",
+    privacy3: "The site host (Netlify) receives the submission so it can reach us.",
+    privacy4: "To have a message deleted, write lacostedesigns@protonmail.com.",
     faqTitle: "Before you write",
     faq1Q: "Where do you work?",
     faq1A:
@@ -129,6 +163,7 @@ export const COPY = {
     faq4A: "English first. French when the business already uses it.",
     fieldShop: "Business name",
     fieldCity: "City",
+    fieldSite: "Current website",
     fieldHasSite: "Do you already have a website?",
     fieldHasYes: "Yes",
     fieldHasNo: "No",
@@ -152,6 +187,7 @@ export const COPY = {
     navApproach: "Approche",
     navPricing: "Tarifs",
     navContact: "Contact",
+    navStudio: "Studio",
     cta: "Démarrer un projet",
     tagline: "Conception de sites",
     heroKicker: "Conception de sites, Montréal et Ouest-de-l'Île",
@@ -173,7 +209,13 @@ export const COPY = {
     workMore: "Autres refontes",
     workOpen: "Ouvrir l'aperçu",
     workBack: "Tout le travail",
+    workPageTitle: "Travail choisi",
+    workPageBody:
+      "Des refontes pour des commerces, des salons, et des restaurants. Heures, prix, et la porte de réservation qu'ils utilisent déjà.",
     approachTitle: "Comment un nouveau site se fait",
+    approachPageTitle: "Comment un nouveau site se fait",
+    approachPageBody:
+      "On part de l'entreprise telle qu'elle est. Puis un aperçu sur notre domaine. Ensuite c'est à vous.",
     offerRebuildTitle: "Nous refaisons votre site",
     offerRebuildBody:
       "Heures, prix, équipe, et la porte de réservation que vous utilisez déjà. Anglais d'abord. Français quand l'entreprise en a besoin.",
@@ -189,11 +231,15 @@ export const COPY = {
     step3Title: "Ensuite c'est à vous",
     step3Body:
       "Mettez-le sur votre domaine quand vous êtes prêt. Un changement? Dites-le.",
+    step4Title: "Entretien, si vous le voulez",
+    step4Body:
+      "Hébergement, surveillance, et petits textes à 175 $ par mois. Arrêt possible n'importe quel mois.",
     closeKicker: "Conception de sites, Montréal et Ouest-de-l'Île",
     closeTitle: "Un nouveau site. Ou un meilleur.",
     closeBody: "Parlez-nous de l'entreprise.",
     footCity: "Montréal et Ouest-de-l'Île",
     footYear: "2026",
+    footPrivacy: "Confidentialité",
     priceKicker: "Tarifs",
     priceTitle: "Des chiffres clairs. Pas de jeu.",
     priceIntro:
@@ -254,6 +300,29 @@ export const COPY = {
     contactKicker: "Montréal et Ouest-de-l'Île",
     contactTitle: "Parlez-nous de l'entreprise",
     contactBody: "Nous dirons quel chiffre convient avant tout travail.",
+    contactReply: "Nous répondons en un jour ouvrable.",
+    contactNextTitle: "Ensuite",
+    contactNext1: "Vous parlez de l'entreprise, de la ville, et de comment on réserve.",
+    contactNext2: "Nous écrivons avec le tarif qui convient. Aucun travail avant ça.",
+    contactNext3: "Vous voyez un aperçu sur notre domaine. Ensuite sur le vôtre.",
+    studioTitle: "Un studio indépendant",
+    studioBody:
+      "Lacoste Designs refait des sites pour des entreprises à Montréal et sur l'Ouest-de-l'Île. Pas une agence de 40 personnes. Un studio qui part des faits du commerce.",
+    studioWhere:
+      "Pointe-Claire, Dollard-Des-Ormeaux, Île-Perrot, Laval, et le reste de l'île. Si l'entreprise est ici, on peut refaire le site.",
+    studioDoTitle: "Ce que nous faisons",
+    studioDoBody:
+      "Des sites. Une refonte ou un premier site. Anglais d'abord. Français quand l'entreprise l'utilise déjà. Booksy, Setmore, Square, OpenTable, ou ce que vous imprimez reste.",
+    studioDontTitle: "Ce que nous ne faisons pas",
+    studioDontBody:
+      "Pas d'appli. Pas de boutique en ligne géante. Pas de rebranding de six mois. Pas de changement forcé d'outil de réservation. Le site, les faits, le téléphone.",
+    privacyTitle: "Confidentialité",
+    privacyIntro:
+      "Le formulaire de contact envoie le nom de l'entreprise, la ville, comment on réserve, et un moyen de vous joindre.",
+    privacy1: "Nous lisons ça pour répondre et dire quel tarif convient.",
+    privacy2: "Nous ne vendons pas ces informations. Nous ne les mettons pas sur une liste d'envoi.",
+    privacy3: "L'hébergeur du site (Netlify) reçoit la soumission pour nous la transmettre.",
+    privacy4: "Pour une suppression, écrivez à lacostedesigns@protonmail.com.",
     faqTitle: "Avant d'écrire",
     faq1Q: "Où travaillez-vous?",
     faq1A:
@@ -269,6 +338,7 @@ export const COPY = {
       "Anglais d'abord. Français quand l'entreprise l'utilise déjà.",
     fieldShop: "Nom de l'entreprise",
     fieldCity: "Ville",
+    fieldSite: "Site actuel",
     fieldHasSite: "Avez-vous déjà un site?",
     fieldHasYes: "Oui",
     fieldHasNo: "Non",
