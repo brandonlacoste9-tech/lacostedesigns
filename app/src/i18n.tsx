@@ -18,18 +18,18 @@ export const COPY = {
     navStudio: "Studio",
     cta: "Start a project",
     tagline: "Website design",
-    heroKicker: "Website design, Montreal and West Island",
+    heroKicker: "Any website. Montreal studio.",
     heroTitle: "Winning clients or losing them",
     heroBody:
-      "We rebuild your website, or we build the one you do not have yet. A studio in Montreal. Work on the island, and farther when the job is there.",
-    recastKicker: "After the film",
+      "A shop, a kitchen, a builder, a car maison. Or whatever you run. We rebuild the site you have, or we build the one you do not have yet.",
+    recastKicker: "This is the level",
     recastTitle: "This is what the rebuild looks like",
     recastBody:
       "VELARE, Kirkland. Extreme Italian automobiles. Inventory, the maison, and a private showing still takes the floor.",
     recastLink: "See the case",
-    forTitle: "A studio in Montreal. Work travels.",
+    forTitle: "Any website. One studio.",
     forBody:
-      "West Island, downtown, Ottawa, Vancouver when the job is there. If you already take bookings, you keep that tool.",
+      "If you take clients, we can rebuild the site. Montreal and the West Island first. Farther when the job is there. The booking door you already use stays.",
     workTitle: "Selected work",
     workAside: "Previews. Not live on their own domains unless they asked.",
     workPreview: "Preview",
@@ -39,7 +39,7 @@ export const COPY = {
     workFilterAll: "All",
     workPageTitle: "Selected work",
     workPageBody:
-      "Rebuilds for shops, restaurants, and home builders. The facts a client needs, and the door they already use.",
+      "Shops, kitchens, builders, a car maison, a house. The facts a client needs, and the door they already use. We do any website that has a door.",
     approachTitle: "How a new site gets made",
     approachPageTitle: "How a new site gets made",
     approachPageBody:
@@ -156,7 +156,7 @@ export const COPY = {
       "The studio is in Montreal and the West Island. The work list also has Ottawa, Vancouver, Calgary, Miami. If the business is here, we rebuild the site. If it is farther, we still can.",
     faq2Q: "Do you only do shops and restaurants?",
     faq2A:
-      "No. Shops, restaurants, home builders, a car maison. If you take clients, we can rebuild the site.",
+      "No. We do any website. The list is what we have rebuilt so far. If you take clients, we can rebuild the site.",
     faq3Q: "We already take bookings. Do we have to switch?",
     faq3A:
       "No. Booksy, Setmore, Square, OpenTable, or whatever you print stays. We rebuild the website.",
@@ -334,18 +334,18 @@ export const COPY = {
     navStudio: "Studio",
     cta: "Démarrer un projet",
     tagline: "Conception de sites",
-    heroKicker: "Conception de sites, Montréal et Ouest-de-l'Île",
+    heroKicker: "N'importe quel site. Studio à Montréal.",
     heroTitle: "Gagner des clients, ou les perdre",
     heroBody:
-      "Nous refaisons votre site, ou nous construisons celui que vous n'avez pas encore. Un studio à Montréal. Du travail sur l'île, et plus loin quand le projet est là.",
-    recastKicker: "Après le film",
+      "Un commerce, une cuisine, un constructeur, une maison auto. Ou ce que vous faites. Nous refaisons le site que vous avez, ou nous construisons celui que vous n'avez pas encore.",
+    recastKicker: "C'est le niveau",
     recastTitle: "Voici à quoi ressemble la refonte",
     recastBody:
       "VELARE, Kirkland. Automobiles italiennes extrêmes. Inventaire, la maison, et une visite privée prend encore le plancher.",
     recastLink: "Voir le cas",
-    forTitle: "Un studio à Montréal. Le travail voyage.",
+    forTitle: "N'importe quel site. Un studio.",
     forBody:
-      "Ouest-de-l'Île, centre-ville, Ottawa, Vancouver quand le projet est là. Si vous prenez déjà des rendez-vous, vous gardez cet outil.",
+      "Si vous prenez des clients, on peut refaire le site. Montréal et l'Ouest-de-l'Île d'abord. Plus loin quand le projet est là. La porte de réservation que vous utilisez déjà reste.",
     workTitle: "Travail choisi",
     workAside:
       "Aperçus. Pas en ligne sur leurs propres domaines, sauf s'ils l'ont demandé.",
@@ -356,7 +356,7 @@ export const COPY = {
     workFilterAll: "Tout",
     workPageTitle: "Travail choisi",
     workPageBody:
-      "Des refontes pour des commerces, des restaurants, et des constructeurs. Les faits qu'un client a besoin, et la porte qu'ils utilisent déjà.",
+      "Commerces, cuisines, constructeurs, une maison auto, une maison. Les faits qu'un client a besoin, et la porte qu'ils utilisent déjà. On fait n'importe quel site qui a une porte.",
     approachTitle: "Comment un nouveau site se fait",
     approachPageTitle: "Comment un nouveau site se fait",
     approachPageBody:
@@ -474,7 +474,7 @@ export const COPY = {
       "Le studio est à Montréal et sur l'Ouest-de-l'Île. La liste a aussi Ottawa, Vancouver, Calgary, Miami. Si l'entreprise est ici, on refait le site. Si elle est plus loin, on peut encore.",
     faq2Q: "Vous ne faites que des commerces et des restaurants?",
     faq2A:
-      "Non. Commerces, restaurants, constructeurs, une maison auto. Si vous prenez des clients, on peut refaire le site.",
+      "Non. On fait n'importe quel site. La liste, c'est ce qu'on a refait jusqu'ici. Si vous prenez des clients, on peut refaire le site.",
     faq3Q: "On prend déjà des rendez-vous. Faut-il changer?",
     faq3A:
       "Non. Booksy, Setmore, Square, OpenTable, ou ce que vous imprimez déjà reste. Nous refaisons le site.",
