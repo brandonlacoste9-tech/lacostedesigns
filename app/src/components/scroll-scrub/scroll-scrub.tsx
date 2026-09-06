@@ -618,7 +618,7 @@ export function ScrollScrub({
                   <img
                     alt=""
                     className="scroll-scrub__poster"
-                    decoding="async"
+                    decoding={index === 0 ? "sync" : "async"}
                     fetchPriority={index === 0 ? "high" : "auto"}
                     loading={index === 0 ? "eager" : "lazy"}
                     src={segment.poster}

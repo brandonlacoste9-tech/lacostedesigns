@@ -11,9 +11,9 @@ export const Route = createFileRoute("/reviews")({
   component: ReviewsPage,
   head: () =>
     pageHead({
-      title: `Reviews · ${STUDIO_NAME}`,
+      title: `What changed · ${STUDIO_NAME}`,
       description:
-        "The work is the review. Named businesses in Montreal, the West Island, and farther. The booking door they already use.",
+        "What changed on each rebuild. Named businesses. The booking door they already use.",
       path: "/reviews",
     }),
 });

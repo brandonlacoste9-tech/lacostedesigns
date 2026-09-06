@@ -301,12 +301,28 @@ export const WORK: WorkItem[] = [
   },
 ];
 
-export const FEATURED = WORK.filter((item) => item.featured);
-export const REST = WORK.filter((item) => !item.featured);
+const HOME_FEATURED = ["b-barbier", "scarolies", "vk-group", "velare"] as const;
+
+export const FEATURED = HOME_FEATURED.map(
+  (slug) => WORK.find((item) => item.slug === slug)!,
+);
+export const REST = WORK.filter(
+  (item) =>
+    !HOME_FEATURED.includes(item.slug as (typeof HOME_FEATURED)[number]),
+);
+export const RECAST = WORK.find((item) => item.slug === "velare")!;
 
 export function workBySlug(slug: string) {
   return WORK.find((item) => item.slug === slug);
 }
+
+export const WORK_KINDS: WorkKind[] = [
+  "shop",
+  "kitchen",
+  "builder",
+  "auto",
+  "house",
+];
 
 export const WORK_CITIES = [...new Set(WORK.map((item) => item.city))];
 

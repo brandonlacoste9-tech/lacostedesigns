@@ -34,6 +34,47 @@ function Contact() {
         </p>
         <InquiryForm />
       </section>
+      <section className="ld-method" id="faq">
+        <h2>{t.faqTitle}</h2>
+        <ol>
+          <li>
+            <strong>{t.faq1Q}</strong>
+            <span>{t.faq1A}</span>
+          </li>
+          <li>
+            <strong>{t.faq2Q}</strong>
+            <span>{t.faq2A}</span>
+          </li>
+          <li>
+            <strong>{t.faq3Q}</strong>
+            <span>{t.faq3A}</span>
+          </li>
+          <li>
+            <strong>{t.faq4Q}</strong>
+            <span>{t.faq4A}</span>
+          </li>
+          <li>
+            <strong>{t.faq5Q}</strong>
+            <span>{t.faq5A}</span>
+          </li>
+          <li>
+            <strong>{t.faq6Q}</strong>
+            <span>{t.faq6A}</span>
+          </li>
+          <li>
+            <strong>{t.faq7Q}</strong>
+            <span>{t.faq7A}</span>
+          </li>
+          <li>
+            <strong>{t.faq8Q}</strong>
+            <span>{t.faq8A}</span>
+          </li>
+          <li>
+            <strong>{t.faq9Q}</strong>
+            <span>{t.faq9A}</span>
+          </li>
+        </ol>
+      </section>
       <section className="ld-method">
         <h2>{t.contactNextTitle}</h2>
         <ol>

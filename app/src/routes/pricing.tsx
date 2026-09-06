@@ -139,6 +139,27 @@ function Pricing() {
         <p>{t.notesTax}</p>
       </section>
 
+      <section className="ld-proof" id="guarantee">
+        <header>
+          <p className="ld-close__kicker">{t.guarKicker}</p>
+          <h2>{t.guarTitle}</h2>
+        </header>
+        <ol>
+          <li>
+            <strong>{t.guar1T}</strong>
+            <span>{t.guar1B}</span>
+          </li>
+          <li>
+            <strong>{t.guar2T}</strong>
+            <span>{t.guar2B}</span>
+          </li>
+          <li>
+            <strong>{t.guar3T}</strong>
+            <span>{t.guar3B}</span>
+          </li>
+        </ol>
+      </section>
+
       <section className="ld-close" id="close">
         <p className="ld-close__kicker">{t.closeKicker}</p>
         <h2>{t.contactTitle}</h2>

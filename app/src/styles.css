@@ -1177,3 +1177,7 @@
 }
 @media (max-width: 860px) {
   
+.ld-industries--work {
+  padding: 0 0 2rem;
+  border-top: 0;
+}

@@ -11,17 +11,35 @@ import {
   scrollScrubScenes as baseScenes,
   scrollScrubTheme,
 } from "@/scroll-scrub-scenes";
-import { FEATURED, REST, WORK, WORK_CITIES } from "@/work";
+import { FEATURED, RECAST, WORK, WORK_CITIES } from "@/work";
 
 export const Route = createFileRoute("/")({
   component: Index,
-  head: () =>
-    pageHead({
+  head: () => {
+    const base = pageHead({
       title: `${STUDIO_NAME} · Website design, Montreal and West Island`,
       description:
-        "Website design, local search, and monthly care for businesses in Montreal and the West Island. We rebuild yours, or we build the one you do not have yet.",
+        "A Montreal studio. Website design, local search, and monthly care. Work on the island, and farther when the job is there.",
       path: "/",
-    }),
+    });
+    return {
+      ...base,
+      links: [
+        ...base.links,
+        {
+          rel: "preload",
+          as: "image",
+          href: "/assets/world/scene-01-poster.png",
+        },
+        {
+          rel: "preload",
+          as: "video",
+          href: "/assets/world/scene-01.mp4",
+          type: "video/mp4",
+        },
+      ],
+    };
+  },
 });
 
 function Index() {
@@ -35,7 +53,6 @@ function Index() {
       actions: <HeroMail />,
     },
   ];
-  const recast = FEATURED[0];
 
   return (
     <main className="ld-page">
@@ -44,20 +61,20 @@ function Index() {
 
       <ScrollScrub scenes={scenes} theme={scrollScrubTheme} />
 
-      {recast?.image ? (
+      {RECAST.image ? (
         <section className="ld-recast" id="recast">
           <div className="ld-recast__copy">
             <p className="ld-close__kicker">{t.recastKicker}</p>
             <h2>{t.recastTitle}</h2>
             <p>{t.recastBody}</p>
-            <a className="ld-text-link" href={`/work/${recast.slug}`}>
+            <a className="ld-text-link" href={`/work/${RECAST.slug}`}>
               {t.recastLink}
             </a>
           </div>
-          <a className="ld-recast__shot" href={`/work/${recast.slug}`}>
+          <a className="ld-recast__shot" href={`/work/${RECAST.slug}`}>
             <img
-              src={recast.image}
-              alt={`${recast.name} website, ${recast.city}`}
+              src={RECAST.image}
+              alt={`${RECAST.name} website, ${RECAST.city}`}
             />
           </a>
         </section>
@@ -68,60 +85,33 @@ function Index() {
         <p>{t.forBody}</p>
       </section>
 
-
-      <section className="ld-industries" id="industries">
-        <header>
-          <p className="ld-close__kicker">{t.indKicker}</p>
-          <h2>{t.indTitle}</h2>
-          <p>{t.indBody}</p>
-        </header>
-        <div className="ld-svc-grid">
-          <article className="ld-svc">
-            <h3>{t.indShop}</h3>
-            <p>{t.indShopB}</p>
-          </article>
-          <article className="ld-svc">
-            <h3>{t.indKitchen}</h3>
-            <p>{t.indKitchenB}</p>
-          </article>
-          <article className="ld-svc">
-            <h3>{t.indBuilder}</h3>
-            <p>{t.indBuilderB}</p>
-          </article>
-          <article className="ld-svc">
-            <h3>{t.indAuto}</h3>
-            <p>{t.indAutoB}</p>
-          </article>
-          <article className="ld-svc">
-            <h3>{t.indHouse}</h3>
-            <p>{t.indHouseB}</p>
-          </article>
-        </div>
-      </section>
-
-      <section className="ld-results" id="proof-numbers">
-        <header>
-          <p className="ld-close__kicker">{t.resKicker}</p>
-          <h2>{t.resTitle}</h2>
-          <p>{t.resBody}</p>
-        </header>
-        <ul className="ld-results__nums">
-          <li>
-            <strong>{WORK.length}</strong>
-            <span>{t.resSites}</span>
-          </li>
-          <li>
-            <strong>{WORK_CITIES.length}</strong>
-            <span>{t.resCities}</span>
-          </li>
-          <li>
-            <strong>EN / FR</strong>
-            <span>{t.resLang}</span>
-          </li>
+      <section className="ld-work" id="work">
+        <h2>{t.workTitle}</h2>
+        <ul className="ld-work__featured">
+          {FEATURED.map((item) => (
+            <li key={item.slug}>
+              <a href={`/work/${item.slug}`}>
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={`${item.name} website, ${item.city}`}
+                  />
+                ) : null}
+                <strong>{item.name}</strong>
+                <span className="ld-work__city">
+                  {lang === "fr" ? item.cityFr : item.city}
+                </span>
+                <span className="ld-work__note">
+                  {lang === "fr" ? item.noteFr : item.note}
+                </span>
+                <span className="ld-work__tag">{t.workPreview}</span>
+              </a>
+            </li>
+          ))}
         </ul>
-        <p>
-          <a className="ld-text-link" href="/reviews">
-            {t.resLink}
+        <p className="ld-work__aside">
+          <a className="ld-text-link" href="/work">
+            {t.workBack}
           </a>
         </p>
       </section>
@@ -157,199 +147,31 @@ function Index() {
         </div>
       </section>
 
-      <section className="ld-proof" id="on-every-site">
+      <section className="ld-results" id="proof-numbers">
         <header>
-          <p className="ld-close__kicker">{t.proofKicker}</p>
-          <h2>{t.proofTitle}</h2>
-          <p>{t.proofBody}</p>
+          <p className="ld-close__kicker">{t.resKicker}</p>
+          <h2>{t.resTitle}</h2>
+          <p>{t.resBody}</p>
         </header>
-        <ol>
+        <ul className="ld-results__nums">
           <li>
-            <strong>{t.proof1T}</strong>
-            <span>{t.proof1B}</span>
+            <strong>{WORK.length}</strong>
+            <span>{t.resSites}</span>
           </li>
           <li>
-            <strong>{t.proof2T}</strong>
-            <span>{t.proof2B}</span>
+            <strong>{WORK_CITIES.length}</strong>
+            <span>{t.resCities}</span>
           </li>
           <li>
-            <strong>{t.proof3T}</strong>
-            <span>{t.proof3B}</span>
+            <strong>EN / FR</strong>
+            <span>{t.resLang}</span>
           </li>
-          <li>
-            <strong>{t.proof4T}</strong>
-            <span>{t.proof4B}</span>
-          </li>
-          <li>
-            <strong>{t.proof5T}</strong>
-            <span>{t.proof5B}</span>
-          </li>
-          <li>
-            <strong>{t.proof6T}</strong>
-            <span>{t.proof6B}</span>
-          </li>
-          <li>
-            <strong>{t.proof7T}</strong>
-            <span>{t.proof7B}</span>
-          </li>
-          <li>
-            <strong>{t.proof8T}</strong>
-            <span>{t.proof8B}</span>
-          </li>
-        </ol>
-      </section>
-
-      <section className="ld-work" id="work">
-        <h2>{t.workTitle}</h2>
-        <ul className="ld-work__featured">
-          {FEATURED.map((item) => (
-            <li key={item.slug}>
-              <a href={`/work/${item.slug}`}>
-                {item.image ? (
-                  <img
-                    src={item.image}
-                    alt={`${item.name} website, ${item.city}`}
-                    onError={(event) => {
-                      event.currentTarget.style.display = "none";
-                    }}
-                  />
-                ) : null}
-                <strong>{item.name}</strong>
-                <span className="ld-work__city">
-                  {lang === "fr" ? item.cityFr : item.city}
-                </span>
-                <span className="ld-work__note">
-                  {lang === "fr" ? item.noteFr : item.note}
-                </span>
-                <span className="ld-work__tag">{t.workPreview}</span>
-              </a>
-            </li>
-          ))}
         </ul>
-        <h3 className="ld-work__more-title">{t.workMore}</h3>
-        <ul className="ld-work__rest">
-          {REST.map((item) => (
-            <li key={item.slug}>
-              <a href={`/work/${item.slug}`}>
-                {item.image ? (
-                  <img
-                    className="ld-work__thumb"
-                    src={item.image}
-                    alt={`${item.name} website, ${item.city}`}
-                    loading="lazy"
-                  />
-                ) : null}
-                <span>
-                  <strong>{item.name}</strong>
-                  <span className="ld-work__city">
-                    {lang === "fr" ? item.cityFr : item.city}
-                  </span>
-                  <span className="ld-work__note">
-                    {lang === "fr" ? item.noteFr : item.note}
-                  </span>
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-        <p className="ld-work__aside">{t.workAside}</p>
-      </section>
-
-      <section className="ld-approach" id="approach">
-        <h2>{t.approachTitle}</h2>
-        <div className="ld-offer">
-          <div className="ld-offer__col">
-            <h3>{t.offerRebuildTitle}</h3>
-            <p>{t.offerRebuildBody}</p>
-          </div>
-          <div className="ld-offer__col">
-            <h3>{t.offerNewTitle}</h3>
-            <p>{t.offerNewBody}</p>
-          </div>
-        </div>
-        <ol className="ld-method">
-          <li>
-            <strong>{t.step1Title}</strong>
-            <span>{t.step1Body}</span>
-          </li>
-          <li>
-            <strong>{t.step2Title}</strong>
-            <span>{t.step2Body}</span>
-          </li>
-          <li>
-            <strong>{t.step3Title}</strong>
-            <span>{t.step3Body}</span>
-          </li>
-          <li>
-            <strong>{t.step4Title}</strong>
-            <span>{t.step4Body}</span>
-          </li>
-        </ol>
-      </section>
-
-      <section className="ld-method" id="faq">
-        <h2>{t.faqTitle}</h2>
-        <ol>
-          <li>
-            <strong>{t.faq1Q}</strong>
-            <span>{t.faq1A}</span>
-          </li>
-          <li>
-            <strong>{t.faq2Q}</strong>
-            <span>{t.faq2A}</span>
-          </li>
-          <li>
-            <strong>{t.faq3Q}</strong>
-            <span>{t.faq3A}</span>
-          </li>
-          <li>
-            <strong>{t.faq4Q}</strong>
-            <span>{t.faq4A}</span>
-          </li>
-          <li>
-            <strong>{t.faq5Q}</strong>
-            <span>{t.faq5A}</span>
-          </li>
-          <li>
-            <strong>{t.faq6Q}</strong>
-            <span>{t.faq6A}</span>
-          </li>
-          <li>
-            <strong>{t.faq7Q}</strong>
-            <span>{t.faq7A}</span>
-          </li>
-
-          <li>
-            <strong>{t.faq8Q}</strong>
-            <span>{t.faq8A}</span>
-          </li>
-          <li>
-            <strong>{t.faq9Q}</strong>
-            <span>{t.faq9A}</span>
-          </li>
-        </ol>
-      </section>
-
-
-      <section className="ld-proof" id="guarantee">
-        <header>
-          <p className="ld-close__kicker">{t.guarKicker}</p>
-          <h2>{t.guarTitle}</h2>
-        </header>
-        <ol>
-          <li>
-            <strong>{t.guar1T}</strong>
-            <span>{t.guar1B}</span>
-          </li>
-          <li>
-            <strong>{t.guar2T}</strong>
-            <span>{t.guar2B}</span>
-          </li>
-          <li>
-            <strong>{t.guar3T}</strong>
-            <span>{t.guar3B}</span>
-          </li>
-        </ol>
+        <p>
+          <a className="ld-text-link" href="/reviews">
+            {t.resLink}
+          </a>
+        </p>
       </section>
 
       <section className="ld-close" id="close">
