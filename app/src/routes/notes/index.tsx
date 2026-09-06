@@ -12,7 +12,7 @@ export const Route = createFileRoute("/notes/")({
     pageHead({
       title: `Notes · ${STUDIO_NAME}`,
       description:
-        "Short notes on search, care, and the facts a Montreal shop needs on the page.",
+        "Short notes on search, care, and the facts a site needs on the page.",
       path: "/notes",
     }),
 });

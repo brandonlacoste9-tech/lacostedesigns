@@ -12,7 +12,7 @@ export const Route = createFileRoute("/approach")({
     pageHead({
       title: `Approach · ${STUDIO_NAME}`,
       description:
-        "How a Montreal website gets made. We start from the shop you already run. Then a preview. Then it is yours.",
+        "How a website gets made. We start from the business you already run. Then a preview. Then it is yours.",
       path: "/approach",
     }),
 });

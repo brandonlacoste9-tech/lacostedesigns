@@ -10,9 +10,9 @@ export const Route = createFileRoute("/services/seo")({
   component: SeoPage,
   head: () =>
     pageHead({
-      title: `Local SEO in Montreal · ${STUDIO_NAME}`,
+      title: `Search · ${STUDIO_NAME}`,
       description:
-        "Google Business, titles, schema, and a sitemap for shops in Montreal and the West Island. Search from $1,200 CAD.",
+        "Google Business, titles, schema, and a sitemap. Search from $1,200 CAD.",
       path: "/services/seo",
     }),
 });

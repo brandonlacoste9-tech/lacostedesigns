@@ -1,120 +1,48 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
-  createRootRouteWithContext,
-  useRouter,
+  createRootRoute,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
 
+import { AuthProvider } from "@/lib/auth/provider";
+import { PreviewHostBridge } from "@/components/preview-host-bridge";
+import { StructuredData } from "@/components/StructuredData";
+import { LangProvider } from "@/i18n";
+import { STUDIO_NAME } from "@/lib/brand";
+import { BUSINESS_JSON } from "@/lib/seo";
+import { AppErrorComponent } from "@/lib/error-component";
 import appCss from "../styles.css?url";
-import { reportHiggsfieldError } from "../lib/higgsfield-error-reporting";
-// Page metadata (browser <title>/favicon + social og: tags) committed into the
-// repo by the marketplace meta API and read at BUILD time — no runtime fetch.
-// Editing it via the app settings UI rewrites this file and redeploys the app.
-import { STUDIO_NAME } from "../lib/brand";
-import { BUSINESS_JSON } from "../lib/seo";
-import { StructuredData } from "../components/StructuredData";
-import { LangProvider } from "../i18n";
-import appMetaJson from "../app-meta.json";
 
-declare const __HF_DESIGN_INSPECTOR__: boolean;
+const TITLE = `${STUDIO_NAME} · Website design`;
+const DESCRIPTION =
+  "Any website. Any city. We rebuild yours, or we build the one you do not have yet.";
 
-// Built-in defaults for any field that isn't set in app-meta.json.
-const DEFAULT_TITLE = STUDIO_NAME;
-const DEFAULT_DESCRIPTION =
-  "Website design for businesses in Montreal and the West Island. We rebuild yours, or we build the one you do not have yet.";
-
-type AppMeta = {
-  og_title?: string | null;
-  og_description?: string | null;
-  og_image_url?: string | null;
-  favicon_url?: string | null;
-  og_video_url?: string | null;
-  // Read by the Higgsfield platform (marketplace feed card), never by the
-  // app itself — keep it in this file, don't render it.
-  marketplace_cover_url?: string | null;
-};
-
-const appMeta = appMetaJson as AppMeta;
-
-// Build the document head (title / description / og: / twitter: / favicon) from
-// app-meta.json, falling back to the defaults above for any unset field.
-// og_title/og_description double as the browser <title> and meta description;
-// og_image_url (when set) also drives the twitter card + image. Built from
-// inline tag literals (conditional spreads for the optional image/favicon) so
-// it matches the head() shape TanStack expects.
-// favicon/og images live in THIS app's own /assets, so the host is never
-// inherent. app-meta.json may carry an absolute higgsfield-app URL with a STALE
-// host — baked from the app this one was copied/remixed/renamed from — which would
-// serve the wrong app's favicon/og. Strip any higgsfield-app host (prod
-// higgsfield.app + dev higgsfield-dev.app) down to a root-relative path so it
-// always resolves against whoever serves THIS page (preview / prod / custom
-// domain). Genuinely external URLs (a CDN image the owner set) are left absolute.
-const APP_HOST_ZONES = ["higgsfield.app", "higgsfield-dev.app"];
-
-function toOwnAssetUrl(value: string | null | undefined): string | null {
-  if (!value) return null;
-  if (value.startsWith("/")) return value; // already root-relative
-  try {
-    const u = new URL(value);
-    const isAppHost = APP_HOST_ZONES.some(
-      (zone) => u.hostname === zone || u.hostname.endsWith(`.${zone}`),
-    );
-    if (isAppHost) return u.pathname + u.search;
-    return value; // external host (CDN, etc.) — keep absolute
-  } catch {
-    return value; // not a parseable URL — leave as-is
-  }
-}
-
-function buildHead(meta: AppMeta) {
-  const title = meta.og_title ?? DEFAULT_TITLE;
-  const description = meta.og_description ?? DEFAULT_DESCRIPTION;
-  const ogImage = toOwnAssetUrl(meta.og_image_url);
-  const favicon = toOwnAssetUrl(meta.favicon_url);
-  const ogVideo = toOwnAssetUrl(meta.og_video_url);
-
-  return {
+export const Route = createRootRoute({
+  head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title },
-      { name: "description", content: description },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
       { name: "author", content: STUDIO_NAME },
-      {
-        name: "google-site-verification",
-        content: "pMnhxiCjozdRpYnYSiKRlSEX17qsMgZuKCkOUfhPfAk",
-      },
       { name: "theme-color", content: "#111214" },
       { name: "geo.region", content: "CA-QC" },
       { name: "geo.placename", content: "Montreal" },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { property: "og:locale", content: "en_CA" },
-      { property: "og:locale:alternate", content: "fr_CA" },
-      { property: "og:site_name", content: STUDIO_NAME },
-      { name: "twitter:card", content: ogImage ? "summary_large_image" : "summary" },
-      { name: "twitter:title", content: title },
-      { name: "twitter:description", content: description },
-      ...(ogImage
-        ? [
-            { property: "og:image", content: ogImage },
-            { name: "twitter:image", content: ogImage },
-          ]
-        : []),
-      // Cover video (og:video) — the animated counterpart of og:image; the
-      // Higgsfield feed cards also play it on hover.
-      ...(ogVideo ? [{ property: "og:video", content: ogVideo }] : []),
     ],
     links: [
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: appCss },
+      { rel: "manifest", href: "/__grok/manifest.webmanifest" },
+      { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
       { rel: "preconnect", href: "https://api.fontshare.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" as const },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
       {
         rel: "stylesheet",
         href: "https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap",
@@ -123,99 +51,38 @@ function buildHead(meta: AppMeta) {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap",
       },
-      ...(favicon ? [{ rel: "icon", href: favicon }] : []),
     ],
-  };
-}
-
-function NotFoundComponent() {
-  return (
-    <div className="ld-error">
-      <p>Page not found</p>
-      <Link to="/">Home</Link>
-    </div>
-  );
-}
-
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
-  const router = useRouter();
-  useEffect(() => {
-    reportHiggsfieldError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
-
-  return (
-    <div className="ld-error">
-      <p>This page did not load</p>
-      <button
-        type="button"
-        onClick={() => {
-          router.invalidate();
-          reset();
-        }}
-      >
-        Try again
-      </button>
-      <a href="/">Home</a>
-    </div>
-  );
-}
-
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  // Read the committed page metadata at build time (no runtime fetch).
-  head: () => buildHead(appMeta),
-  shellComponent: RootShell,
-  component: RootComponent,
-  notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
+  }),
+  component: RootDocument,
+  notFoundComponent: NotFound,
+  errorComponent: AppErrorComponent,
 });
 
-function RootShell({ children }: { children: ReactNode }) {
+function RootDocument() {
   return (
-    <html lang="en" data-theme="default-dark" style={{ colorScheme: "dark" }}>
-      {/* Marketplace apps are permanently dark: data-theme is pinned on <html>
-          above. Do not add quanta's bootstrapScript/ThemeController, a theme
-          toggle, or a light mode. */}
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
-      <body className="ld-body">
+      <body className="ld-body antialiased">
+        <PreviewHostBridge />
         <StructuredData json={BUSINESS_JSON} />
-        {children}
+        <AuthProvider>
+          <LangProvider>
+            <Outlet />
+          </LangProvider>
+        </AuthProvider>
         <Scripts />
       </body>
     </html>
   );
 }
 
-function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
-
-  useEffect(() => {
-    if (!__HF_DESIGN_INSPECTOR__) {
-      return;
-    }
-
-    void import("../module/design-inspector/runtime")
-      .then(({ installHiggsfieldDesignInspector }) => {
-        installHiggsfieldDesignInspector();
-      })
-      .catch((error) => {
-        reportHiggsfieldError(
-          error instanceof Error ? error : new Error("Failed to load design inspector"),
-          {
-            boundary: "higgsfield_design_inspector_import",
-          },
-        );
-      });
-  }, []);
-
+function NotFound() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <LangProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-      </LangProvider>
-    </QueryClientProvider>
+    <div className="ld-error">
+      <p>Page not found</p>
+      <Link to="/">Home</Link>
+    </div>
   );
 }

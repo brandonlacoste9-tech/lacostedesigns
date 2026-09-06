@@ -12,7 +12,7 @@ export const Route = createFileRoute("/services/")({
     pageHead({
       title: `Website, search, and care · ${STUDIO_NAME}`,
       description:
-        "Website design, local SEO, and monthly care for businesses in Montreal and the West Island.",
+        "Website design, search, and monthly care. Any website. Any city.",
       path: "/services",
     }),
 });

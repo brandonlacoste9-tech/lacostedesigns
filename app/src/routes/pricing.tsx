@@ -10,9 +10,9 @@ export const Route = createFileRoute("/pricing")({
   component: Pricing,
   head: () =>
     pageHead({
-      title: `Website pricing in Montreal · ${STUDIO_NAME}`,
+      title: `Website pricing · ${STUDIO_NAME}`,
       description:
-        "Website design in Montreal and the West Island. Basic from $2,900 CAD. Advanced from $7,900. Search from $1,200. Monthly care $175.",
+        "Website design, any city. Basic from $2,900 CAD. Advanced from $7,900. Search from $1,200. Monthly care $175.",
       path: "/pricing",
     }),
 });

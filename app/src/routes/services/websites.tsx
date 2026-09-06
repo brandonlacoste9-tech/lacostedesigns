@@ -10,7 +10,7 @@ export const Route = createFileRoute("/services/websites")({
   component: WebsitesPage,
   head: () =>
     pageHead({
-      title: `Website design in Montreal · ${STUDIO_NAME}`,
+      title: `Website design · ${STUDIO_NAME}`,
       description:
         "Rebuild your website, or build the one you do not have yet. Hours, prices, staff, and the booking door you already use.",
       path: "/services/websites",

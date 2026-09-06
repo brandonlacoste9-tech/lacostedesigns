@@ -10,9 +10,9 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
   head: () =>
     pageHead({
-      title: `Contact a Montreal web designer · ${STUDIO_NAME}`,
+      title: `Contact · ${STUDIO_NAME}`,
       description:
-        "Start a website, search, or care project in Montreal or the West Island. Tell us about the business. We write back with which number fits.",
+        "Start a website, search, or care project. Any city. Tell us about the business. We write back with which number fits.",
       path: "/contact",
     }),
 });

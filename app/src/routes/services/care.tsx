@@ -12,7 +12,7 @@ export const Route = createFileRoute("/services/care")({
     pageHead({
       title: `Website care · ${STUDIO_NAME}`,
       description:
-        "Hosting, SSL, backups, uptime watch, and small copy edits. $175 a month in Montreal and the West Island. Stop any month.",
+        "Hosting, SSL, backups, uptime watch, and small copy edits. $175 a month. Stop any month.",
       path: "/services/care",
     }),
 });

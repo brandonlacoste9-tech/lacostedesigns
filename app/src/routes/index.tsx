@@ -17,9 +17,9 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => {
     const base = pageHead({
-      title: `${STUDIO_NAME} · Website design, Montreal and West Island`,
+      title: `${STUDIO_NAME} · Website design`,
       description:
-        "A Montreal studio. Website design, local search, and monthly care. Work on the island, and farther when the job is there.",
+        "Any website. Any city. Website design, local search, and monthly care.",
       path: "/",
     });
     return {

@@ -35,23 +35,10 @@ export function pageHead(opts: {
           ? "noindex, nofollow"
           : "index, follow, max-image-preview:large",
       },
-      { property: "og:title", content: opts.title },
-      { property: "og:description", content: opts.description },
-      { property: "og:url", content: url },
-      { property: "og:type", content: "website" },
-      { name: "twitter:title", content: opts.title },
-      { name: "twitter:description", content: opts.description },
-      ...(image
-        ? [
-            { property: "og:image", content: image },
-            { name: "twitter:image", content: image },
-          ]
-        : []),
     ],
     links: [{ rel: "canonical", href: url }],
   };
 }
-
 
 export const SITE_PAGES: { path: string; priority: string; changefreq: string }[] =
   [
@@ -93,30 +80,28 @@ export const BUSINESS_JSON = JSON.stringify({
       image: `${SITE_ORIGIN}/assets/logo.svg`,
       logo: `${SITE_ORIGIN}/assets/logo.svg`,
       description:
-        "Website design, local search, and monthly care for businesses in Montreal and the West Island.",
+        "Any website. Any city. Website design, local search, and monthly care.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Montreal",
         addressRegion: "QC",
         addressCountry: "CA",
       },
-      areaServed: [
-        { "@type": "City", name: "Montreal" },
-        { "@type": "Place", name: "West Island" },
-        { "@type": "City", name: "Pointe-Claire" },
-        { "@type": "City", name: "Dollard-Des-Ormeaux" },
-        { "@type": "City", name: "L'Île-Perrot" },
-      ],
+      areaServed: "Worldwide",
       knowsLanguage: ["en", "fr"],
       priceRange: "$$",
       currenciesAccepted: "CAD",
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Website design",
+        name: "Website design, search, and care",
         itemListElement: [
           {
             "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Basic website" },
+            itemOffered: {
+              "@type": "Service",
+              name: "Basic website",
+              url: `${SITE_ORIGIN}/services/websites`,
+            },
             priceSpecification: {
               "@type": "UnitPriceSpecification",
               price: "2900",
@@ -127,7 +112,11 @@ export const BUSINESS_JSON = JSON.stringify({
           },
           {
             "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Advanced website" },
+            itemOffered: {
+              "@type": "Service",
+              name: "Advanced website",
+              url: `${SITE_ORIGIN}/services/websites`,
+            },
             priceSpecification: {
               "@type": "UnitPriceSpecification",
               price: "7900",
@@ -136,7 +125,6 @@ export const BUSINESS_JSON = JSON.stringify({
             },
             url: `${SITE_ORIGIN}/pricing`,
           },
-
           {
             "@type": "Offer",
             itemOffered: {
@@ -165,7 +153,7 @@ export const BUSINESS_JSON = JSON.stringify({
               priceCurrency: "CAD",
               unitText: "MONTH",
             },
-            url: `${SITE_ORIGIN}/pricing`,
+            url: `${SITE_ORIGIN}/services/care`,
           },
         ],
       },
@@ -177,22 +165,6 @@ export const BUSINESS_JSON = JSON.stringify({
       name: STUDIO_NAME,
       inLanguage: ["en-CA", "fr-CA"],
       publisher: { "@id": `${SITE_ORIGIN}/#studio` },
-    },
-    {
-      "@type": "Question",
-      name: "Do you do SEO?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Google Business, titles, schema, and a sitemap. Search is a line of work, not a buzzword on the homepage.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is care?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Hosting, SSL, backups, uptime watch, and small copy edits. $175 a month. Stop any month.",
-      },
     },
   ],
 });
