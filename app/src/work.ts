@@ -14,6 +14,37 @@ export type WorkItem = {
 };
 
 export const WORK: WorkItem[] = [
+
+  {
+    slug: "hasler-homes",
+    name: "Hasler Homes",
+    city: "North Vancouver",
+    cityFr: "North Vancouver",
+    note: "The consultation form still takes the lot.",
+    noteFr: "Le formulaire de consultation prend encore le lot.",
+    booking: "Consultation form",
+    preview: "https://haslerhomes.grok.me",
+    image: "/assets/work/hasler-homes.jpg",
+    featured: true,
+    body: "North Shore, Vancouver. Lynn Valley, Edgemont, Pemberton Heights. Owners on the job. The consultation form still takes the lot.",
+    bodyFr:
+      "North Shore, Vancouver. Lynn Valley, Edgemont, Pemberton Heights. Les propriétaires sur le chantier. Le formulaire de consultation prend encore le lot.",
+  },
+  {
+    slug: "une-maison",
+    name: "Une Maison",
+    city: "Laurentides",
+    cityFr: "Laurentides",
+    note: "Their contact form still takes the lot.",
+    noteFr: "Leur formulaire de contact prend encore le lot.",
+    booking: "Contact form",
+    preview: "https://unemaison.grok.me",
+    image: "/assets/work/une-maison.jpg",
+    featured: true,
+    body: "Les Constructions Raymond et Fils. From Montréal to the Laurentians. Models, lots, and the contact form they already use. English and French.",
+    bodyFr:
+      "Les Constructions Raymond et Fils. De Montréal aux Laurentides. Modèles, terrains, et le formulaire de contact qu'ils utilisent déjà. Français et anglais.",
+  },
   {
     slug: "b-barbier",
     name: "B Barbier et Coiffure",

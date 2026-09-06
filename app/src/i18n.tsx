@@ -29,7 +29,7 @@ export const COPY = {
     recastLink: "See the case",
     forTitle: "Website design in Montreal and the West Island",
     forBody:
-      "Shops, clinics, restaurants, and the rest. If you already take bookings, you keep that tool. We rebuild the website so people in Montreal and the West Island can find you.",
+      "Shops, clinics, restaurants, home builders, and the rest. If you already take bookings, you keep that tool. We rebuild the website so people in Montreal and the West Island can find you.",
     workTitle: "Selected work",
     workAside: "Previews. Not live on their own domains unless they asked.",
     workPreview: "Preview",
@@ -38,7 +38,7 @@ export const COPY = {
     workBack: "All work",
     workPageTitle: "Selected work",
     workPageBody:
-      "Rebuilds for shops, salons, and restaurants. Hours, prices, and the booking door they already use.",
+      "Rebuilds for shops, restaurants, and home builders. The facts a client needs, and the door they already use.",
     approachTitle: "How a new site gets made",
     approachPageTitle: "How a new site gets made",
     approachPageBody:
@@ -296,7 +296,7 @@ export const COPY = {
     recastLink: "Voir le cas",
     forTitle: "Conception de sites à Montréal et sur l'Ouest-de-l'Île",
     forBody:
-      "Commerces, cliniques, restaurants, et le reste. Si vous prenez déjà des rendez-vous, vous gardez cet outil. Nous refaisons le site pour que les gens de Montréal et de l'Ouest-de-l'Île vous trouvent.",
+      "Commerces, cliniques, restaurants, constructeurs, et le reste. Si vous prenez déjà des rendez-vous, vous gardez cet outil. Nous refaisons le site pour que les gens de Montréal et de l'Ouest-de-l'Île vous trouvent.",
     workTitle: "Travail choisi",
     workAside:
       "Aperçus. Pas en ligne sur leurs propres domaines, sauf s'ils l'ont demandé.",
@@ -306,7 +306,7 @@ export const COPY = {
     workBack: "Tout le travail",
     workPageTitle: "Travail choisi",
     workPageBody:
-      "Des refontes pour des commerces, des salons, et des restaurants. Heures, prix, et la porte de réservation qu'ils utilisent déjà.",
+      "Des refontes pour des commerces, des restaurants, et des constructeurs. Les faits qu'un client a besoin, et la porte qu'ils utilisent déjà.",
     approachTitle: "Comment un nouveau site se fait",
     approachPageTitle: "Comment un nouveau site se fait",
     approachPageBody:
