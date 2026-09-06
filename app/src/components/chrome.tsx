@@ -5,14 +5,14 @@ import { useLang, type Lang } from "@/i18n";
 export function SiteNav({
   current,
 }: {
-  current?: "home" | "pricing" | "contact" | "work";
+  current?: "home" | "pricing" | "contact" | "work" | "approach" | "studio" | "privacy";
 }) {
   const { t, lang, setLang } = useLang();
   const links = [
-    { href: "/#work", label: t.navWork, id: "work" as const },
-    { href: "/#approach", label: t.navApproach, id: "home" as const },
-    { href: "/pricing", label: t.navPricing, id: "pricing" as const },
-    { href: "/contact", label: t.navContact, id: "contact" as const },
+    { href: "/work", label: t.navWork, id: "work" as const, keep: true },
+    { href: "/approach", label: t.navApproach, id: "approach" as const, keep: false },
+    { href: "/pricing", label: t.navPricing, id: "pricing" as const, keep: true },
+    { href: "/contact", label: t.navContact, id: "contact" as const, keep: true },
   ];
 
   return (
@@ -29,11 +29,7 @@ export function SiteNav({
           <a
             key={link.href}
             href={link.href}
-            className={
-              link.id === "pricing" || link.id === "contact"
-                ? "ld-nav__keep"
-                : undefined
-            }
+            className={link.keep ? "ld-nav__keep" : undefined}
             aria-current={current === link.id ? "page" : undefined}
           >
             {link.label}
@@ -79,10 +75,14 @@ export function SiteFoot() {
   return (
     <footer className="ld-foot">
       <span>
-        {STUDIO_NAME}. <a href="/#area">{t.footCity}</a>. {t.footYear}.
+        {STUDIO_NAME}. <a href="/studio">{t.footCity}</a>. {t.footYear}.
       </span>
       <span className="ld-foot__links">
+        <a href="/work">{t.navWork}</a>
+        <a href="/approach">{t.navApproach}</a>
         <a href="/pricing">{t.navPricing}</a>
+        <a href="/studio">{t.navStudio}</a>
+        <a href="/privacy">{t.footPrivacy}</a>
         <a href="/contact">{t.navContact}</a>
         <a href="mailto:lacostedesigns@protonmail.com">
           lacostedesigns@protonmail.com
